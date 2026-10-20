@@ -1,0 +1,242 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Mon Oct 19 21:33:21 2026
+| Host         : Tzarina12 running 64-bit major release  (build 9200)
+| Command      : report_timing -from [all_registers] -to [all_registers] -max_paths 1 -file dc_2_critical_path.rpt
+| Design       : Top_ALU_secuencial
+| Device       : 7vx485t-ffg1157
+| Speed File   : -1  PRODUCTION 1.12 2014-09-11
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -21.799ns  (required time - arrival time)
+  Source:                 a_reg_reg[15]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            flag_z_reg/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        31.456ns  (logic 8.787ns (27.934%)  route 22.669ns (72.066%))
+  Logic Levels:           69  (CARRY4=33 LUT3=2 LUT4=3 LUT5=16 LUT6=15)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.707ns = ( 11.707 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.013ns
+    Clock Pessimism Removal (CPR):    0.161ns
+  Clock Uncertainty:      0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.200ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  <hidden>
+                                                      0.000     0.000 r  clk
+                         net (fo=0)                   0.000     0.000    clk
+                         IBUF (Prop_ibuf_I_O)         0.726     0.726 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.584     1.309    clk_IBUF
+                         BUFG (Prop_bufg_I_O)         0.120     1.429 r  clk_IBUF_BUFG_inst/O
+                         net (fo=54, unplaced)        0.584     2.013    clk_IBUF_BUFG
+                         FDCE                                         r  a_reg_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+                         FDCE (Prop_fdce_C_Q)         0.269     2.282 r  a_reg_reg[15]/Q
+                         net (fo=16, unplaced)        0.595     2.877    u_alu/u_divisor/Q[15]
+                         LUT3 (Prop_lut3_I0_O)        0.165     3.042 r  u_alu/u_divisor/r_temp1_carry_i_1/O
+                         net (fo=1, unplaced)         0.000     3.042    u_alu/u_divisor/r_temp1_carry_i_1_n_0
+                         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.353     3.395 r  u_alu/u_divisor/r_temp1_carry/CO[3]
+                         net (fo=1, unplaced)         0.008     3.403    u_alu/u_divisor/r_temp1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     3.463 r  u_alu/u_divisor/r_temp1_carry__0/CO[3]
+                         net (fo=44, unplaced)        0.597     4.060    u_alu/u_divisor/r_temp1__7
+                         LUT6 (Prop_lut6_I4_O)        0.053     4.113 r  u_alu/u_divisor/cociente0_carry_i_4/O
+                         net (fo=1, unplaced)         0.247     4.360    u_alu/u_divisor/cociente0_carry_i_4_n_0
+                         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.340     4.700 r  u_alu/u_divisor/cociente0_carry/CO[3]
+                         net (fo=1, unplaced)         0.008     4.708    u_alu/u_divisor/cociente0_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     4.768 r  u_alu/u_divisor/cociente0_carry__0/CO[3]
+                         net (fo=17, unplaced)        0.603     5.371    u_alu/u_divisor/p_0_in
+                         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.359     5.730 r  u_alu/u_divisor/i__carry_i_1__26/CO[3]
+                         net (fo=1, unplaced)         0.008     5.738    u_alu/u_divisor/i__carry_i_1__26_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.798 r  u_alu/u_divisor/i__carry__0_i_1__26/CO[3]
+                         net (fo=1, unplaced)         0.000     5.798    u_alu/u_divisor/i__carry__0_i_1__26_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.220     6.018 r  u_alu/u_divisor/i__carry__1_i_1__12/O[1]
+                         net (fo=10, unplaced)        0.495     6.513    u_alu/u_divisor/p_0_in1_in[9]
+                         LUT4 (Prop_lut4_I0_O)        0.155     6.668 r  u_alu/u_divisor/i__carry__0_i_8__11/O
+                         net (fo=1, unplaced)         0.000     6.668    u_alu/u_divisor/i__carry__0_i_8__11_n_0
+                         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     6.965 r  u_alu/u_divisor/cociente0_inferred__0/i__carry__0/CO[3]
+                         net (fo=78, unplaced)        0.611     7.576    u_alu/u_divisor/cociente0_inferred__0/i__carry__0_n_0
+                         LUT3 (Prop_lut3_I1_O)        0.056     7.632 r  u_alu/u_divisor/i__carry_i_11/O
+                         net (fo=2, unplaced)         0.351     7.983    u_alu/u_divisor/i__carry_i_11_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.053     8.036 r  u_alu/u_divisor/i__carry_i_3__11/O
+                         net (fo=1, unplaced)         0.363     8.399    u_alu/u_divisor/i__carry_i_3__11_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307     8.706 r  u_alu/u_divisor/cociente0_inferred__1/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008     8.714    u_alu/u_divisor/cociente0_inferred__1/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     8.774 r  u_alu/u_divisor/cociente0_inferred__1/i__carry__0/CO[3]
+                         net (fo=38, unplaced)        0.541     9.315    u_alu/u_divisor/cociente0_inferred__1/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053     9.368 f  u_alu/u_divisor/i__carry__0_i_9__11/O
+                         net (fo=1, unplaced)         0.340     9.708    u_alu/u_divisor/i__carry__0_i_9__11_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.053     9.761 r  u_alu/u_divisor/i__carry__0_i_1__15/O
+                         net (fo=1, unplaced)         0.348    10.109    u_alu/u_divisor/i__carry__0_i_1__15_n_0
+                         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.234    10.343 r  u_alu/u_divisor/cociente0_inferred__2/i__carry__0/CO[3]
+                         net (fo=76, unplaced)        0.611    10.954    u_alu/u_divisor/cociente0_inferred__2/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    11.007 r  u_alu/u_divisor/i__carry_i_2__15/O
+                         net (fo=9, unplaced)         0.381    11.388    u_alu/u_divisor/i__carry_i_2__15_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    11.441 r  u_alu/u_divisor/i__carry_i_3__9/O
+                         net (fo=1, unplaced)         0.363    11.804    u_alu/u_divisor/i__carry_i_3__9_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    12.111 r  u_alu/u_divisor/cociente0_inferred__3/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    12.119    u_alu/u_divisor/cociente0_inferred__3/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    12.179 r  u_alu/u_divisor/cociente0_inferred__3/i__carry__0/CO[3]
+                         net (fo=42, unplaced)        0.596    12.775    u_alu/u_divisor/cociente0_inferred__3/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    12.828 r  u_alu/u_divisor/i__carry_i_2__16/O
+                         net (fo=9, unplaced)         0.381    13.209    u_alu/u_divisor/i__carry_i_2__16_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    13.262 r  u_alu/u_divisor/i__carry_i_3__8/O
+                         net (fo=1, unplaced)         0.363    13.625    u_alu/u_divisor/i__carry_i_3__8_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    13.932 r  u_alu/u_divisor/cociente0_inferred__4/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    13.940    u_alu/u_divisor/cociente0_inferred__4/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    14.000 r  u_alu/u_divisor/cociente0_inferred__4/i__carry__0/CO[3]
+                         net (fo=73, unplaced)        0.610    14.610    u_alu/u_divisor/cociente0_inferred__4/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    14.663 r  u_alu/u_divisor/i__carry_i_2__17/O
+                         net (fo=9, unplaced)         0.381    15.044    u_alu/u_divisor/i__carry_i_2__17_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    15.097 r  u_alu/u_divisor/i__carry_i_3__7/O
+                         net (fo=1, unplaced)         0.363    15.460    u_alu/u_divisor/i__carry_i_3__7_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    15.767 r  u_alu/u_divisor/cociente0_inferred__5/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    15.775    u_alu/u_divisor/cociente0_inferred__5/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    15.835 r  u_alu/u_divisor/cociente0_inferred__5/i__carry__0/CO[3]
+                         net (fo=46, unplaced)        0.598    16.433    u_alu/u_divisor/cociente0_inferred__5/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    16.486 r  u_alu/u_divisor/i__carry_i_2__18/O
+                         net (fo=9, unplaced)         0.381    16.867    u_alu/u_divisor/i__carry_i_2__18_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    16.920 r  u_alu/u_divisor/i__carry_i_3__6/O
+                         net (fo=1, unplaced)         0.363    17.283    u_alu/u_divisor/i__carry_i_3__6_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    17.590 r  u_alu/u_divisor/cociente0_inferred__6/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    17.598    u_alu/u_divisor/cociente0_inferred__6/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    17.658 r  u_alu/u_divisor/cociente0_inferred__6/i__carry__0/CO[3]
+                         net (fo=70, unplaced)        0.609    18.267    u_alu/u_divisor/cociente0_inferred__6/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    18.320 r  u_alu/u_divisor/i__carry_i_2__19/O
+                         net (fo=9, unplaced)         0.381    18.701    u_alu/u_divisor/i__carry_i_2__19_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    18.754 r  u_alu/u_divisor/i__carry_i_3__5/O
+                         net (fo=1, unplaced)         0.363    19.117    u_alu/u_divisor/i__carry_i_3__5_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    19.424 r  u_alu/u_divisor/cociente0_inferred__7/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    19.432    u_alu/u_divisor/cociente0_inferred__7/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    19.492 r  u_alu/u_divisor/cociente0_inferred__7/i__carry__0/CO[3]
+                         net (fo=50, unplaced)        0.600    20.092    u_alu/u_divisor/cociente0_inferred__7/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    20.145 r  u_alu/u_divisor/i__carry_i_2__20/O
+                         net (fo=9, unplaced)         0.381    20.526    u_alu/u_divisor/i__carry_i_2__20_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    20.579 r  u_alu/u_divisor/i__carry_i_3__4/O
+                         net (fo=1, unplaced)         0.363    20.942    u_alu/u_divisor/i__carry_i_3__4_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    21.249 r  u_alu/u_divisor/cociente0_inferred__8/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    21.257    u_alu/u_divisor/cociente0_inferred__8/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    21.317 r  u_alu/u_divisor/cociente0_inferred__8/i__carry__0/CO[3]
+                         net (fo=67, unplaced)        0.608    21.925    u_alu/u_divisor/cociente0_inferred__8/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    21.978 r  u_alu/u_divisor/i__carry_i_2__21/O
+                         net (fo=9, unplaced)         0.381    22.359    u_alu/u_divisor/i__carry_i_2__21_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    22.412 r  u_alu/u_divisor/i__carry_i_3__3/O
+                         net (fo=1, unplaced)         0.363    22.775    u_alu/u_divisor/i__carry_i_3__3_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    23.082 r  u_alu/u_divisor/cociente0_inferred__9/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    23.090    u_alu/u_divisor/cociente0_inferred__9/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    23.150 r  u_alu/u_divisor/cociente0_inferred__9/i__carry__0/CO[3]
+                         net (fo=54, unplaced)        0.602    23.752    u_alu/u_divisor/cociente0_inferred__9/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    23.805 r  u_alu/u_divisor/i__carry_i_2__22/O
+                         net (fo=9, unplaced)         0.381    24.186    u_alu/u_divisor/i__carry_i_2__22_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    24.239 r  u_alu/u_divisor/i__carry_i_3__2/O
+                         net (fo=1, unplaced)         0.363    24.602    u_alu/u_divisor/i__carry_i_3__2_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    24.909 r  u_alu/u_divisor/cociente0_inferred__10/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    24.917    u_alu/u_divisor/cociente0_inferred__10/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    24.977 r  u_alu/u_divisor/cociente0_inferred__10/i__carry__0/CO[3]
+                         net (fo=65, unplaced)        0.607    25.584    u_alu/u_divisor/cociente0_inferred__10/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    25.637 r  u_alu/u_divisor/i__carry_i_2__23/O
+                         net (fo=9, unplaced)         0.381    26.018    u_alu/u_divisor/i__carry_i_2__23_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    26.071 r  u_alu/u_divisor/i__carry_i_3__1/O
+                         net (fo=1, unplaced)         0.363    26.434    u_alu/u_divisor/i__carry_i_3__1_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    26.741 r  u_alu/u_divisor/cociente0_inferred__11/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    26.749    u_alu/u_divisor/cociente0_inferred__11/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    26.809 r  u_alu/u_divisor/cociente0_inferred__11/i__carry__0/CO[3]
+                         net (fo=59, unplaced)        0.604    27.413    u_alu/u_divisor/cociente0_inferred__11/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    27.466 r  u_alu/u_divisor/i__carry_i_2__24/O
+                         net (fo=8, unplaced)         0.378    27.844    u_alu/u_divisor/i__carry_i_2__24_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    27.897 r  u_alu/u_divisor/i__carry_i_3__0/O
+                         net (fo=1, unplaced)         0.363    28.260    u_alu/u_divisor/i__carry_i_3__0_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    28.567 r  u_alu/u_divisor/cociente0_inferred__12/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    28.575    u_alu/u_divisor/cociente0_inferred__12/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    28.635 r  u_alu/u_divisor/cociente0_inferred__12/i__carry__0/CO[3]
+                         net (fo=56, unplaced)        0.603    29.238    u_alu/u_divisor/cociente0_inferred__12/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053    29.291 r  u_alu/u_divisor/i__carry_i_2__25/O
+                         net (fo=4, unplaced)         0.364    29.655    u_alu/u_divisor/i__carry_i_2__25_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053    29.708 r  u_alu/u_divisor/i__carry_i_3/O
+                         net (fo=1, unplaced)         0.363    30.071    u_alu/u_divisor/i__carry_i_3_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307    30.378 r  u_alu/u_divisor/cociente0_inferred__13/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.008    30.386    u_alu/u_divisor/cociente0_inferred__13/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060    30.446 r  u_alu/u_divisor/cociente0_inferred__13/i__carry__0/CO[3]
+                         net (fo=4, unplaced)         0.542    30.988    u_alu/u_divisor/cociente0_inferred__13/i__carry__0_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.056    31.044 f  u_alu/u_divisor/result[14]_i_3/O
+                         net (fo=15, unplaced)        0.393    31.437    u_alu/u_divisor/result[14]_i_3_n_0
+                         LUT4 (Prop_lut4_I3_O)        0.056    31.493 f  u_alu/u_divisor/result[4]_i_2/O
+                         net (fo=1, unplaced)         0.340    31.833    u_alu/u_divisor/result[4]_i_2_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.053    31.886 f  u_alu/u_divisor/result[4]_i_1/O
+                         net (fo=2, unplaced)         0.351    32.237    u_alu/u_divisor/D[4]
+                         LUT4 (Prop_lut4_I2_O)        0.053    32.290 r  u_alu/u_divisor/flag_z_i_4/O
+                         net (fo=1, unplaced)         0.340    32.630    u_alu/u_divisor/flag_z_i_4_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.053    32.683 r  u_alu/u_divisor/flag_z_i_3/O
+                         net (fo=1, unplaced)         0.340    33.023    u_alu/u_divisor/flag_z_i_3_n_0
+                         LUT5 (Prop_lut5_I2_O)        0.053    33.076 r  u_alu/u_divisor/flag_z_i_2/O
+                         net (fo=1, unplaced)         0.340    33.416    u_alu/u_divisor/flag_z_i_2_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.053    33.469 r  u_alu/u_divisor/flag_z_i_1/O
+                         net (fo=1, unplaced)         0.000    33.469    flag_z_comb
+                         FDCE                                         r  flag_z_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  <hidden>
+                                                      0.000    10.000 r  clk
+                         net (fo=0)                   0.000    10.000    clk
+                         IBUF (Prop_ibuf_I_O)         0.600    10.600 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.554    11.155    clk_IBUF
+                         BUFG (Prop_bufg_I_O)         0.113    11.268 r  clk_IBUF_BUFG_inst/O
+                         net (fo=54, unplaced)        0.439    11.707    clk_IBUF_BUFG
+                         FDCE                                         r  flag_z_reg/C
+                         clock pessimism              0.161    11.868    <hidden>
+                         clock uncertainty           -0.235    11.633    <hidden>
+                         FDCE (Setup_fdce_C_D)        0.037    11.670    flag_z_reg
+  -------------------------------------------------------------------
+                         required time                         11.670    <hidden>
+                         arrival time                         -33.469    <hidden>
+  -------------------------------------------------------------------
+                         slack                                -21.799    <hidden>
+
+
+
+

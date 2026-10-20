@@ -1,0 +1,31 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Mon Oct 19 21:33:21 2026
+| Host         : Tzarina12 running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file dc_3_area_hierarchy.rpt
+| Design       : Top_ALU_secuencial
+| Device       : xc7vx485tffg1157-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------+---------+------------+------------+---------+------+-----+--------+--------+------------+
+|        Instance        |  Module | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++------------------------+---------+------------+------------+---------+------+-----+--------+--------+------------+
+| Top_ALU_secuencial     |   (top) |        709 |        709 |       0 |    0 |  54 |      0 |      0 |          0 |
+|   (Top_ALU_secuencial) |   (top) |         10 |         10 |       0 |    0 |  54 |      0 |      0 |          0 |
+|   u_alu                | Top_ALU |        699 |        699 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     u_divisor          | divisor |        699 |        699 |       0 |    0 |   0 |      0 |      0 |          0 |
++------------------------+---------+------------+------------+---------+------+-----+--------+--------+------------+
+
+

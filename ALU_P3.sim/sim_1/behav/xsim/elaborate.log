@@ -1,0 +1,23 @@
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot testbench_Top_ALU_secuencial_behav xil_defaultlib.testbench_Top_ALU_secuencial xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-2861] module 'Top_ALU_secuencial' does not have a parameter named ancho [C:/Users/stali/ALU_P3/ALU_P3.srcs/sim_1/new/ALU_Testbench.sv:27]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Mux_instancia(ancho=16)
+Compiling module xil_defaultlib.prefix_adder(ancho=16)
+Compiling module xil_defaultlib.logica_triestado(ancho=16)
+Compiling module xil_defaultlib.divisor(WIDTH=16)
+Compiling module xil_defaultlib.Mux_decision(ancho=16)
+Compiling module xil_defaultlib.flags_nzcv(ancho=16)
+Compiling module xil_defaultlib.Top_ALU(width=16)
+Compiling module xil_defaultlib.Top_ALU_secuencial
+Compiling module xil_defaultlib.testbench_Top_ALU_secuencial
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_Top_ALU_secuencial_behav

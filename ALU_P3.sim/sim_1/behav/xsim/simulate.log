@@ -1,0 +1,41 @@
+Time resolution is 1 ps
+VERIFICACION DE ALU+ SINCRONA (16 BITS)
+[PASS]                   ADD Basica | Ctrl=000 | A=0x04b0 B=0x0320 | Res=0x07d0 | NZCV=0000
+[PASS]             ADD Carry & Zero | Ctrl=000 | A=0xffff B=0x0001 | Res=0x0000 | NZCV=0110
+[PASS]          ADD Signed Overflow | Ctrl=000 | A=0x7fff B=0x0001 | Res=0x8000 | NZCV=1001
+[PASS]                 SUB Positiva | Ctrl=001 | A=0x1388 B=0x05dc | Res=0x0dac | NZCV=0010
+[PASS]           SUB Resultado Cero | Ctrl=001 | A=0xabcd B=0xabcd | Res=0x0000 | NZCV=0110
+[PASS]       SUB Resultado Negativo | Ctrl=001 | A=0x0064 B=0x012c | Res=0xff38 | NZCV=1000
+[PASS]          SUB Signed Overflow | Ctrl=001 | A=0x8000 B=0x0001 | Res=0x7fff | NZCV=0011
+[PASS]                AND Bit a Bit | Ctrl=010 | A=0xf0f0 B=0x0ff0 | Res=0x00f0 | NZCV=0000
+[PASS]           AND Resultado Cero | Ctrl=010 | A=0xaaaa B=0x5555 | Res=0x0000 | NZCV=0100
+[PASS]                 OR Bit a Bit | Ctrl=011 | A=0xf0f0 B=0x0ff0 | Res=0xfff0 | NZCV=1000
+[PASS]          MUL Slot (No usado) | Ctrl=100 | A=0x0019 B=0x0004 | Res=0x0000 | NZCV=0100
+[PASS]       DIV Cociente Exacto/In | Ctrl=101 | A=0x03e8 B=0x001e | Res=0x0021 | NZCV=0000
+[PASS]                  DIV Residuo | Ctrl=110 | A=0x03e8 B=0x001e | Res=0x000a | NZCV=0000
+[PASS]         DIV Rango Maximo Coc | Ctrl=101 | A=0xffff B=0x00ff | Res=0x0101 | NZCV=0000
+[PASS]         DIV Rango Maximo Res | Ctrl=110 | A=0xffff B=0x00ff | Res=0x0000 | NZCV=0100
+[PASS]        DIV Por Cero Cociente | Ctrl=101 | A=0x01f4 B=0x0000 | Res=0x0000 | NZCV=0100
+[PASS]         DIV Por Cero Residuo | Ctrl=110 | A=0x01f4 B=0x0000 | Res=0x01f4 | NZCV=0000
+[PASS]              ALL ZEROS (111) | Ctrl=111 | A=0xffff B=0xffff | Res=0x0000 | NZCV=0100
+VERIFICACION DE ALU+ SINCRONA (16 BITS)
+[PASS]                   ADD Basica | Ctrl=000 | A=0x04b0 B=0x0320 | Res=0x07d0 | NZCV=0000
+[PASS]             ADD Carry & Zero | Ctrl=000 | A=0xffff B=0x0001 | Res=0x0000 | NZCV=0110
+[PASS]          ADD Signed Overflow | Ctrl=000 | A=0x7fff B=0x0001 | Res=0x8000 | NZCV=1001
+[PASS]                 SUB Positiva | Ctrl=001 | A=0x1388 B=0x05dc | Res=0x0dac | NZCV=0010
+[PASS]           SUB Resultado Cero | Ctrl=001 | A=0xabcd B=0xabcd | Res=0x0000 | NZCV=0110
+[PASS]       SUB Resultado Negativo | Ctrl=001 | A=0x0064 B=0x012c | Res=0xff38 | NZCV=1000
+[PASS]          SUB Signed Overflow | Ctrl=001 | A=0x8000 B=0x0001 | Res=0x7fff | NZCV=0011
+[PASS]                AND Bit a Bit | Ctrl=010 | A=0xf0f0 B=0x0ff0 | Res=0x00f0 | NZCV=0000
+[PASS]           AND Resultado Cero | Ctrl=010 | A=0xaaaa B=0x5555 | Res=0x0000 | NZCV=0100
+[PASS]                 OR Bit a Bit | Ctrl=011 | A=0xf0f0 B=0x0ff0 | Res=0xfff0 | NZCV=1000
+[PASS]          MUL Slot (No usado) | Ctrl=100 | A=0x0019 B=0x0004 | Res=0x0000 | NZCV=0100
+[PASS]       DIV Cociente Exacto/In | Ctrl=101 | A=0x03e8 B=0x001e | Res=0x0021 | NZCV=0000
+[PASS]                  DIV Residuo | Ctrl=110 | A=0x03e8 B=0x001e | Res=0x000a | NZCV=0000
+[PASS]         DIV Rango Maximo Coc | Ctrl=101 | A=0xffff B=0x00ff | Res=0x0101 | NZCV=0000
+[PASS]         DIV Rango Maximo Res | Ctrl=110 | A=0xffff B=0x00ff | Res=0x0000 | NZCV=0100
+[PASS]        DIV Por Cero Cociente | Ctrl=101 | A=0x01f4 B=0x0000 | Res=0x0000 | NZCV=0100
+[PASS]         DIV Por Cero Residuo | Ctrl=110 | A=0x01f4 B=0x0000 | Res=0x01f4 | NZCV=0000
+[PASS]              ALL ZEROS (111) | Ctrl=111 | A=0xffff B=0xffff | Res=0x0000 | NZCV=0100
+ RESUMEN FINAL: 18 Pruebas Exitosas (PASS) | 0 Pruebas Fallidas (FAIL)
+$finish called at time : 1055 ns : File "C:/Users/stali/ALU_P3/ALU_P3.srcs/sim_1/new/ALU_Testbench.sv" Line 163

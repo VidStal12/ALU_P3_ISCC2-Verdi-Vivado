@@ -1,0 +1,84 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : Top_ALU_secuencial
+Version: Y-2026.03-SP2
+Date   : Sat Oct 24 18:29:08 2026
+****************************************
+
+  Startpoint: u_alu_u_divisor_b_pipe_reg_2__9_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: flag_z_reg (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: typical
+  Scenario: func_typical
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                50.71     50.71
+
+  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX1TAS7)
+                                                   0.00     50.71 r
+  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX1TAS7)
+                                                   3.77     54.48 r
+  U2262/O (CLKINVX1TAS7)                           0.97     55.44 f
+  U2263/O (NOR2X1TAS7)                             1.60     57.04 r
+  U2284/O (OAI12X1TAS7)                            0.78     57.83 f
+  U2288/O (AOI12X1TAS7)                            2.06     59.88 r
+  U2296/O (OAI12X1TAS7)                            0.64     60.52 f
+  U2297/O (AOI12X1TAS7)                            1.15     61.67 r
+  U611/O (XOR2X4TAS7)                              3.07     64.74 f
+  U2298/O (INVX4TAS7)                              1.05     65.78 r
+  U2353/O (NAND2X1TAS7)                            0.45     66.23 f
+  U2355/O (NAND2X1TAS7)                            0.74     66.98 r
+  U2356/O (NOR2X1TAS7)                             0.46     67.43 f
+  U2357/O (NOR2X1TAS7)                             1.34     68.78 r
+  U2376/O (NAND2X1TAS7)                            0.66     69.43 f
+  U2384/O (OAI12X2TAS7)                            2.17     71.60 r
+  U2492/O (AOI12X1TAS7)                            0.87     72.47 f
+  U2493/O (XOR2X2TAS7)                             2.64     75.12 r
+  U636/O (CLKINVX1TAS7)                            2.01     77.13 f
+  U2541/O (AOI12X1TAS7)                            1.94     79.06 r
+  U2542/O (NOR2X1TAS7)                             0.59     79.65 f
+  U2543/O (NOR2X1TAS7)                             1.34     80.99 r
+  U2562/O (NAND2X1TAS7)                            0.52     81.52 f
+  U640/O (OAI12X1TAS7)                             3.24     84.76 r
+  U2677/O (AOI12X1TAS7)                            1.03     85.80 f
+  U2678/O (XOR2X4TAS7)                             3.22     89.02 f
+  U2712/O (MUX2X1TAS7)                             1.87     90.89 r
+  U2713/O (NOR2X1TAS7)                             0.43     91.32 f
+  U2714/O (NOR2X1TAS7)                             1.34     92.67 r
+  U2729/O (NAND2X1TAS7)                            0.52     93.19 f
+  U638/O (OAI12X1TAS7)                             3.24     96.43 r
+  U2822/O (AOI12X1TAS7)                            1.03     97.47 f
+  U612/O (XOR2X1TAS7)                              1.82     99.29 f
+  U2823/O (CLKINVX2TAS7)                           0.37     99.66 r
+  U609/O (NOR2X1TAS7)                              0.30     99.96 f
+  U2845/O (NAND2X1TAS7)                            2.07    102.03 r
+  U2846/O (CLKINVX1TAS7)                           0.87    102.90 f
+  U2848/O (AOI12X1TAS7)                            1.04    103.94 r
+  U2862/O (OAI12X1TAS7)                            0.63    104.57 f
+  U3089/O (NOR4X1TAS7)                             1.66    106.24 r
+  U3093/O (AND4X1TAS7)                             1.55    107.79 r
+  flag_z_reg/D (DFFRBQX1TAS7)                      0.00    107.79 r
+  data arrival time                                        107.79
+
+  clock clk (rise edge)                           60.00     60.00
+  clock network delay (propagated)                 0.00     60.00
+  flag_z_reg/CK (DFFRBQX1TAS7)                     0.00     60.00 r
+  clock uncertainty                               -0.20     59.80
+  library setup time                              -1.27     58.53
+  data required time                                        58.53
+  ------------------------------------------------------------------------
+  data required time                                        58.53
+  data arrival time                                        -107.79
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                         -49.26
+
+
+1

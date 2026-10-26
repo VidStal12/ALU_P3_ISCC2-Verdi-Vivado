@@ -1,0 +1,457 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+              Version X-2025.06-SP5-5 for linux64 - Aug 13, 2026 
+
+                    Copyright (c) 1988 - 2026 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+      Inc.  This software may only be used in accordance with the terms and
+  conditions of a written license agreement with Synopsys, Inc.  All other use,
+   reproduction, or distribution of this software is strictly prohibited.  By
+   installing, accessing, using, or executing this software, you agree that it
+  will reside on, operate within, and have access to the computers and networks
+    where such software is used ("Host System"), and that Synopsys may access
+     components and data of the Host System as necessary for it to function
+ properly, to authenticate and validate license keys, to verify that it is used
+ only in conformity with the applicable license restrictions, and to communicate
+                 error messages and associated data to Synopsys.
+
+Initializing...
+Current time:       Sat Oct 24 16:07:31 2026
+Hostname:           synopsys-unis
+CPU Model:          Intel(R) Xeon(R) D-2123IT CPU @ 2.20GHz
+CPU Details:        Cores = 8 : Sockets = 1 : Cache Size = 8448 KB : Freq = 3.00 GHz
+OS:                 Linux 5.14.0-687.49.1.el9_8.x86_64
+RAM:                124 GB (Free 106 GB)
+Swap:                31 GB (Free  31 GB)
+Work Filesystem:    /home mounted to /dev/mapper/rl_synopsys_home-home
+Tmp Filesystem:     / mounted to /dev/mapper/rl_synopsys_root-root
+Work Disk:          11169 GB (Free 10595 GB)
+Tmp Disk:           379 GB (Free  79 GB)
+
+CPU Load: 4%, Ram Free: 106 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+# 1. Configurar la biblioteca M31 exacta de tu servidor
+set PDK_DB_DIR "$env(HOME)/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db"
+/home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db
+set TARGET_LIB "$PDK_DB_DIR/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db"
+/home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db
+set_app_var search_path    [list "." $PDK_DB_DIR]
+. /home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db
+set_app_var target_library $TARGET_LIB
+/home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db
+set_app_var link_library   "* $TARGET_LIB"
+* /home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db
+# 2. Analizar los 8 archivos RTL de tu carpeta ALU
+analyze -format sverilog [list \
+    Buffer_Triestado.sv \
+    divisor.sv \
+    flags_nzcv.sv \
+    Mux_instancia_ALU.sv \
+    Mux_seleccion_ALU.sv \
+    prefix_adder.v \
+    Top_ALU.sv \
+    Top_ALU_secuencial.sv \
+]
+Running PRESTO HDLC
+Compiling source file ./Buffer_Triestado.sv
+Compiling source file ./divisor.sv
+Compiling source file ./flags_nzcv.sv
+Compiling source file ./Mux_instancia_ALU.sv
+Compiling source file ./Mux_seleccion_ALU.sv
+Compiling source file ./prefix_adder.v
+Compiling source file ./Top_ALU.sv
+Compiling source file ./Top_ALU_secuencial.sv
+Presto compilation completed successfully.
+Loading db file '/home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db'
+Information: Using CCS timing libraries. (TIM-024)
+1
+elaborate Top_ALU_secuencial
+Loading db file '/usr/synopsys/syn/X-2025.06-SP5-5/libraries/syn/gtech.db'
+Loading db file '/usr/synopsys/syn/X-2025.06-SP5-5/libraries/syn/standard.sldb'
+  Loading link library 'M31LLSC750GL150MS_25CTT1P8_ctyp_ccs'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process in routine 'Top_ALU_secuencial' in file
+	 ./Top_ALU_secuencial.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+| alu_control_reg_reg | Flip-flop |   3   |  Y  | N  | None  | Async | N  |  53  |
+|      a_reg_reg      | Flip-flop |  16   |  Y  | N  | None  | Async | N  |  53  |
+|      b_reg_reg      | Flip-flop |  16   |  Y  | N  | None  | Async | N  |  53  |
+|     flag_v_reg      | Flip-flop |   1   |  N  | N  | None  | Async | N  |  82  |
+|     result_reg      | Flip-flop |  16   |  Y  | N  | None  | Async | N  |  82  |
+|     flag_n_reg      | Flip-flop |   1   |  N  | N  | None  | Async | N  |  82  |
+|     flag_z_reg      | Flip-flop |   1   |  N  | N  | None  | Async | N  |  82  |
+|     flag_c_reg      | Flip-flop |   1   |  N  | N  | None  | Async | N  |  82  |
+==================================================================================
+Presto compilation completed successfully. (Top_ALU_secuencial)
+Module: Top_ALU_secuencial, Ports: 57, Input: 37, Output: 20, Inout: 0
+Module: Top_ALU_secuencial, Registers: 55, Async set/reset: 55, Sync set/reset: 0
+Information: Module Top_ALU_secuencial report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'Top_ALU_secuencial'.
+Information: Building the design 'Top_ALU' instantiated from design 'Top_ALU_secuencial' with
+	the parameters "width=16". (HDL-193)
+Presto compilation completed successfully. (Top_ALU_width16)
+Module: Top_ALU_width16, Ports: 57, Input: 37, Output: 20, Inout: 0
+Module: Top_ALU_width16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module Top_ALU_width16 report end. (ELAB-965)
+Information: Building the design 'Mux_instancia' instantiated from design 'Top_ALU_width16' with
+	the parameters "ancho=16". (HDL-193)
+Presto compilation completed successfully. (Mux_instancia_ancho16)
+Module: Mux_instancia_ancho16, Ports: 49, Input: 33, Output: 16, Inout: 0
+Module: Mux_instancia_ancho16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module Mux_instancia_ancho16 report end. (ELAB-965)
+Information: Building the design 'prefix_adder' instantiated from design 'Top_ALU_width16' with
+	the parameters "ancho=16". (HDL-193)
+Presto compilation completed successfully. (prefix_adder_ancho16)
+Module: prefix_adder_ancho16, Ports: 50, Input: 33, Output: 17, Inout: 0
+Module: prefix_adder_ancho16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module prefix_adder_ancho16 report end. (ELAB-965)
+Information: Building the design 'logica_triestado' instantiated from design 'Top_ALU_width16' with
+	the parameters "ancho=16". (HDL-193)
+
+Inferred tri-state devices in process
+	in routine logica_triestado_ancho16 line 38 in file
+		'./Buffer_Triestado.sv'.
+============================================
+| Register Name |       Type       | Width |
+============================================
+|  out_and_tri  | Tri-State Buffer |  16   |
+============================================
+
+Inferred tri-state devices in process
+	in routine logica_triestado_ancho16 line 39 in file
+		'./Buffer_Triestado.sv'.
+============================================
+| Register Name |       Type       | Width |
+============================================
+|  out_or_tri   | Tri-State Buffer |  16   |
+============================================
+Presto compilation completed successfully. (logica_triestado_ancho16)
+Module: logica_triestado_ancho16, Ports: 67, Input: 35, Output: 32, Inout: 0
+Module: logica_triestado_ancho16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module logica_triestado_ancho16 report end. (ELAB-965)
+Information: Building the design 'divisor' instantiated from design 'Top_ALU_width16' with
+	the parameters "ancho=16". (HDL-193)
+
+Inferred memory devices in process in routine 'divisor_ancho16' in file
+	 ./divisor.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|      r_reg_reg      | Flip-flop |  48   |  Y  | N  | None  | Async | N  |  96  |
+|     a_pipe_reg      | Flip-flop |  48   |  Y  | N  | None  | Async | N  |  96  |
+|     b_pipe_reg      | Flip-flop |  48   |  Y  | N  | None  | Async | N  |  96  |
+|      q_reg_reg      | Flip-flop |  24   |  Y  | N  | None  | Async | N  |  96  |
+==================================================================================
+Presto compilation completed successfully. (divisor_ancho16)
+Module: divisor_ancho16, Ports: 67, Input: 35, Output: 32, Inout: 0
+Module: divisor_ancho16, Registers: 168, Async set/reset: 168, Sync set/reset: 0
+Information: Module divisor_ancho16 report end. (ELAB-965)
+Information: Building the design 'Mux_decision' instantiated from design 'Top_ALU_width16' with
+	the parameters "ancho=16". (HDL-193)
+Presto compilation completed successfully. (Mux_decision_ancho16)
+Module: Mux_decision_ancho16, Ports: 147, Input: 131, Output: 16, Inout: 0
+Module: Mux_decision_ancho16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module Mux_decision_ancho16 report end. (ELAB-965)
+Information: Building the design 'flags_nzcv' instantiated from design 'Top_ALU_width16' with
+	the parameters "ancho=16". (HDL-193)
+Presto compilation completed successfully. (flags_nzcv_ancho16)
+Module: flags_nzcv_ancho16, Ports: 72, Input: 68, Output: 4, Inout: 0
+Module: flags_nzcv_ancho16, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module flags_nzcv_ancho16 report end. (ELAB-965)
+1
+current_design Top_ALU_secuencial
+Current design is 'Top_ALU_secuencial'.
+{Top_ALU_secuencial}
+link
+
+  Linking design 'Top_ALU_secuencial'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (8 designs)               /home/vpezzarossi/ALU/Top_ALU_secuencial.db, etc
+  M31LLSC750GL150MS_25CTT1P8_ctyp_ccs (library) /home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db
+
+Information: Summary of messages issued during linking: (LINK-1806)
+No messages were issued during linking.
+1
+# 3. Aplicar restricciones SDC
+source alu.sdc
+1
+# 4. Leer actividad SAIF de VCS (si ya corriste la simulación)
+if {[file exists "alu_secuencial.saif"]} {
+    read_saif -input "alu_secuencial.saif" \
+              -instance_name "testbench_Top_ALU_secuencial/uut"
+}
+1
+# 5. Compilar / Sintetizar a celdas estándar M31
+compile_ultra -gate_clock  -retime
+Loading db file '/usr/synopsys/syn/X-2025.06-SP5-5/libraries/syn/dw_foundation.sldb'
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 4%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | X-2025.06-DWBB_202506.5 |     *     |
+| Licensed DW Building Blocks        | X-2025.06-DWBB_202506.5 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Command Line | compile_ultra -retime -gate_clock                                                 |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 825                                    |
+| Number of User Hierarchies                              | 7                                      |
+| Sequential Cell Count                                   | 223                                    |
+| Macro Count                                             | 0                                      |
+| Pad Count                                               | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 60                                     |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with Target Library Subset (with clock_path)     | false  (false )                        |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 131 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'Top_ALU_secuencial'
+Information: Performing clock-gating with positive edge logic: 'integrated' and negative edge logic: 'integrated'. (PWR-1047)
+
+Loaded alib file './alib-52/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db.alib'
+Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
+Module: DW01_NAND2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy u_alu before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_alu/u_mux_b before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_alu/u_adder before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_alu/u_logic_tristate before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_alu/u_divisor before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_alu/u_mux_final before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_alu/u_flags before Pass 1 (OPT-776)
+Information: Ungrouping 7 of 9 hierarchies before Pass 1 (OPT-775)
+CPU Load: 4%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'Top_ALU_secuencial'
+ Implement Synthetic for 'Top_ALU_secuencial'.
+Information: Added key list 'DesignWare' to design 'Top_ALU_secuencial'. (DDB-72)
+  Processing 'SNPS_CLOCK_GATE_HIGH_divisor_ancho16'
+  Mapping integrated clock gating circuitry
+CPU Load: 5%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIE1X1TAS7' in the library 'M31LLSC750GL150MS_25CTT1P8_ctyp_ccs' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIE0X1TAS7' in the library 'M31LLSC750GL150MS_25CTT1P8_ctyp_ccs' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_14, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design Top_ALU_secuencial. (PWR-730)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07   62125.1      0.00       0.0       0.0                           2203.2075
+    0:00:07   59175.2      0.00       0.0      79.1                           2093.0906
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:07   59339.8      0.00       0.0       0.0                           2106.6887
+    0:00:07   58907.5      0.00       0.0       0.0                           2091.1340
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:09   42958.5      1.70      26.5       0.0                           1321.8156
+    0:00:09   43032.7      0.00       0.0       0.0                           1326.4027
+    0:00:09   43032.7      0.00       0.0       0.0                           1326.4027
+    0:00:09   43032.7      0.00       0.0       0.0                           1326.4027
+    0:00:09   42092.5      0.00       0.0       0.0                           1293.9639
+    0:00:09   42092.5      0.00       0.0       0.0                           1293.9639
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:11   41719.9      0.00       0.0       0.0                           1281.7384
+    0:00:11   41719.9      0.00       0.0       0.0                           1281.7384
+    0:00:11   41719.9      0.00       0.0       0.0                           1281.7384
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
+    0:00:11   41660.2      0.00       0.0       0.0                           1278.3552
+CPU Load: 5%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+Loading db file '/home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 6%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+# 6. Generar los 5 reportes obligatorios del Punto 8
+report_qor                        > reportes/dc_1_report_qor.rpt
+report_timing -max_paths 5        > reportes/dc_2_report_timing.rpt
+report_area -hierarchy            > reportes/dc_3_report_area.rpt
+report_power                      > reportes/dc_4_report_power.rpt
+report_constraint -all_violators  > reportes/dc_5_report_violators.rpt
+report_clock_gating               > reportes/dc_6_report_clock_gating.rpt
+# 7. Exportar Netlist y SDC para IC Compiler II
+change_names -rules verilog -hierarchy
+Warning: In the design Top_ALU_secuencial, net 'result[15]' is connecting multiple ports. (UCN-1)
+1
+write -format verilog -hierarchy -output outputs/Top_ALU_secuencial_mapped.v
+Writing verilog file '/home/vpezzarossi/ALU/outputs/Top_ALU_secuencial_mapped.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdc outputs/Top_ALU_secuencial_mapped.sdc
+1
+write -format ddc -hierarchy -output outputs/Top_ALU_secuencial_mapped.ddc
+Writing ddc file 'outputs/Top_ALU_secuencial_mapped.ddc'.
+1
+exit
+
+Memory usage for this session 496 Mbytes.
+Memory usage for this session including child processes 496 Mbytes.
+CPU usage for this session 23 seconds ( 0.01 hours ).
+Elapsed time for this session 25 seconds ( 0.01 hours ).
+
+Thank you...

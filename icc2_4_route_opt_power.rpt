@@ -1,0 +1,53 @@
+****************************************
+Report : power
+        -significant_digits 2
+Design : Top_ALU_secuencial
+Version: Y-2026.03-SP2
+Date   : Sat Oct 24 18:29:14 2026
+****************************************
+Information: Activity for scenario func_typical was cached, no propagation required. (POW-005)
+Information: Activity for scenario func_typical was cached, no propagation required. (POW-005)
+Mode: func
+Corner: typical
+Scenario: func_typical
+Voltage: 1.80
+Temperature: 25.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1pW
+Leakage Power Unit   : 1pW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+
+  Cell Internal Power    = 6.98e+07 pW ( 75.2%)
+  Net Switching Power    = 2.30e+07 pW ( 24.8%)
+Total Dynamic Power      = 9.28e+07 pW (100.0%)
+
+Cell Leakage Power       = 1.32e+03 pW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             4.85e+07               7.82e+06               1.49e+00               5.63e+07    ( 60.6%)        i
+register                  7.99e+06               2.04e+06               2.58e+02               1.00e+07    ( 10.8%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             1.34e+07               1.31e+07               1.06e+03               2.65e+07    ( 28.6%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     6.98e+07 pW            2.30e+07 pW            1.32e+03 pW            9.28e+07 pW
+1

@@ -29,19 +29,19 @@ Please use '-no_save' simv switch to avoid this.
                  error messages and associated data to Synopsys.
 
 Initializing...
-Current time:       Sat Oct 24 16:07:31 2026
+Current time:       Mon Oct 26 20:37:39 2026
 Hostname:           synopsys-unis
 CPU Model:          Intel(R) Xeon(R) D-2123IT CPU @ 2.20GHz
 CPU Details:        Cores = 8 : Sockets = 1 : Cache Size = 8448 KB : Freq = 3.00 GHz
 OS:                 Linux 5.14.0-687.49.1.el9_8.x86_64
-RAM:                124 GB (Free 106 GB)
+RAM:                124 GB (Free  99 GB)
 Swap:                31 GB (Free  31 GB)
 Work Filesystem:    /home mounted to /dev/mapper/rl_synopsys_home-home
 Tmp Filesystem:     / mounted to /dev/mapper/rl_synopsys_root-root
-Work Disk:          11169 GB (Free 10595 GB)
-Tmp Disk:           379 GB (Free  79 GB)
+Work Disk:          11169 GB (Free 10587 GB)
+Tmp Disk:           379 GB (Free  78 GB)
 
-CPU Load: 4%, Ram Free: 106 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+CPU Load: 2%, Ram Free: 99 GB, Swap Free: 31 GB, Work Disk Free: 10587 GB, Tmp Disk Free: 78 GB
 # 1. Configurar la biblioteca M31 exacta de tu servidor
 set PDK_DB_DIR "$env(HOME)/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db"
 /home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db
@@ -192,20 +192,46 @@ No messages were issued during linking.
 1
 # 3. Aplicar restricciones SDC
 source alu.sdc
+Current design is 'Top_ALU_secuencial'.
+Current design is 'Top_ALU_secuencial'.
 1
-# 4. Leer actividad SAIF de VCS (si ya corriste la simulación)
+# 4. Configurar estilo de Clock Gating (-max_fanout 12 evita sobrecargar una sola celda ICG)
+set_clock_gating_style \
+    -sequential_cell latch \
+    -positive_edge_logic {integrated} \
+    -control_point before \
+    -minimum_bitwidth 4 \
+    -max_fanout 12
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 4
+Minimum bank bitwidth for enhanced clock gating: 8
+Maximum fanout: 12
+Setup time for clock gate: -
+Hold time for clock gate: -
+Clock gating circuitry (positive edge): integrated
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: before
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+1
+# 5. Leer actividad SAIF de VCS
 if {[file exists "alu_secuencial.saif"]} {
     read_saif -input "alu_secuencial.saif" \
               -instance_name "testbench_Top_ALU_secuencial/uut"
 }
 1
-# 5. Compilar / Sintetizar a celdas estándar M31
-compile_ultra -gate_clock  -retime
+# 6. Compilar con Clock Gating (-gate_clock) y Balanceo de Pipeline (-retime)
+compile_ultra -gate_clock -retime
 Loading db file '/usr/synopsys/syn/X-2025.06-SP5-5/libraries/syn/dw_foundation.sldb'
 Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
 Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
 Information: Performing leakage power optimization. (PWR-850)
-CPU Load: 4%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+CPU Load: 3%, Ram Free: 98 GB, Swap Free: 31 GB, Work Disk Free: 10587 GB, Tmp Disk Free: 78 GB
 Alib files are up-to-date.
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
@@ -246,7 +272,6 @@ Information: Retiming is enabled. SVF file must be used for formal verification.
 Information: There are 131 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
   Simplifying Design 'Top_ALU_secuencial'
-Information: Performing clock-gating with positive edge logic: 'integrated' and negative edge logic: 'integrated'. (PWR-1047)
 
 Loaded alib file './alib-52/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db.alib'
 Module: DW01_NAND2, Ports: 3, Input: 2, Output: 1, Inout: 0
@@ -259,8 +284,8 @@ Information: Ungrouping hierarchy u_alu/u_logic_tristate before Pass 1 (OPT-776)
 Information: Ungrouping hierarchy u_alu/u_divisor before Pass 1 (OPT-776)
 Information: Ungrouping hierarchy u_alu/u_mux_final before Pass 1 (OPT-776)
 Information: Ungrouping hierarchy u_alu/u_flags before Pass 1 (OPT-776)
-Information: Ungrouping 7 of 9 hierarchies before Pass 1 (OPT-775)
-CPU Load: 4%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+Information: Ungrouping 7 of 22 hierarchies before Pass 1 (OPT-775)
+CPU Load: 3%, Ram Free: 98 GB, Swap Free: 31 GB, Work Disk Free: 10587 GB, Tmp Disk Free: 78 GB
 Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
@@ -268,16 +293,16 @@ Information: State dependent leakage is now switched from on to off.
   Processing 'Top_ALU_secuencial'
  Implement Synthetic for 'Top_ALU_secuencial'.
 Information: Added key list 'DesignWare' to design 'Top_ALU_secuencial'. (DDB-72)
-  Processing 'SNPS_CLOCK_GATE_HIGH_divisor_ancho16'
+  Processing 'SNPS_CLOCK_GATE_HIGH_divisor_ancho16_0'
   Mapping integrated clock gating circuitry
-CPU Load: 5%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+CPU Load: 4%, Ram Free: 98 GB, Swap Free: 31 GB, Work Disk Free: 10587 GB, Tmp Disk Free: 78 GB
 
   Updating timing information
 Information: Updating design information... (UID-85)
 Information: The library cell 'TIE1X1TAS7' in the library 'M31LLSC750GL150MS_25CTT1P8_ctyp_ccs' is not characterized for internal power. (PWR-536)
 Information: The library cell 'TIE0X1TAS7' in the library 'M31LLSC750GL150MS_25CTT1P8_ctyp_ccs' is not characterized for internal power. (PWR-536)
 Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_13, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_0, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_1, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_2, since there are no registers. (PWR-806)
@@ -293,6 +318,19 @@ Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_11, 
 Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_12, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_13, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design Top_ALU_secuencial_DW01_sub_J1_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_divisor_ancho16_12, since there are no registers. (PWR-806)
 Information: Performing clock-gating on design Top_ALU_secuencial. (PWR-730)
 
   Beginning Mapping Optimizations  (Ultra High effort)
@@ -303,13 +341,13 @@ Information: Performing clock-gating on design Top_ALU_secuencial. (PWR-730)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:07   62125.1      0.00       0.0       0.0                           2203.2075
-    0:00:07   59175.2      0.00       0.0      79.1                           2093.0906
+    0:00:08   65471.6      0.00       0.0    2173.1                           2446.1484
+    0:00:08   62521.8      0.00       0.0    2203.2                           2336.0315
 
   Beginning Constant Register Removal
   -----------------------------------
-    0:00:07   59339.8      0.00       0.0       0.0                           2106.6887
-    0:00:07   58907.5      0.00       0.0       0.0                           2091.1340
+    0:00:08   62989.5      0.00       0.0    2027.6                           2373.2908
+    0:00:08   62557.3      0.00       0.0    2011.1                           2357.7358
 
   Beginning Global Optimizations
   ------------------------------
@@ -351,51 +389,70 @@ Information: Performing clock-gating on design Top_ALU_secuencial. (PWR-730)
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:09   42958.5      1.70      26.5       0.0                           1321.8156
-    0:00:09   43032.7      0.00       0.0       0.0                           1326.4027
-    0:00:09   43032.7      0.00       0.0       0.0                           1326.4027
-    0:00:09   43032.7      0.00       0.0       0.0                           1326.4027
-    0:00:09   42092.5      0.00       0.0       0.0                           1293.9639
-    0:00:09   42092.5      0.00       0.0       0.0                           1293.9639
+    0:00:09   45105.2      1.06       1.1    1841.3                           1409.4425
+    0:00:09   45158.4      0.00       0.0    1831.1                           1411.7610
+    0:00:09   45158.4      0.00       0.0    1831.1                           1411.7610
+    0:00:09   45158.4      0.00       0.0    1831.1                           1411.7610
+    0:00:10   44124.6      0.00       0.0    1735.3                           1375.6473
+    0:00:10   44124.6      0.00       0.0    1735.3                           1375.6473
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.2992
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
+    0:00:10   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:10   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:10   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:10   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:10   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:10   41771.5      0.00       0.0       0.0                           1284.1641
-    0:00:11   41719.9      0.00       0.0       0.0                           1281.7384
-    0:00:11   41719.9      0.00       0.0       0.0                           1281.7384
-    0:00:11   41719.9      0.00       0.0       0.0                           1281.7384
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41698.9      0.00       0.0       0.0                           1280.8352
-    0:00:11   41660.2      0.00       0.0       0.0                           1278.3552
-CPU Load: 5%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+    0:00:11   44085.9      0.00       0.0    1731.6                           1374.8265
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:13   54672.3      1.14       1.1     954.3 net10781                  1935.7135
+    0:00:15   56830.2      0.00       0.0     802.8                           2033.8802
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:15   56575.4      0.00       0.0     802.3                           2005.4392
+    0:00:16   55157.8      0.00       0.0     793.2                           1910.3046
+    0:00:16   55157.8      0.00       0.0     793.2                           1910.3046
+    0:00:16   55157.8      0.00       0.0     793.2                           1910.3046
+    0:00:17   55528.7      0.00       0.0     597.9 net8403                   1944.4031
+    0:00:18   59638.1      0.63       0.8     425.9                           2105.7095
+    0:00:18   59638.1      0.63       0.8     425.9                           2105.7095
+    0:00:18   59520.4      0.12       0.1     429.9                           2099.8174
+    0:00:18   59486.5      0.01       0.0     442.0                           2098.5986
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:18   59247.8      0.00       0.0     460.4                           2085.2903
+    0:00:19   58473.7      0.00       0.0     457.1                           2030.1321
+CPU Load: 6%, Ram Free: 98 GB, Swap Free: 31 GB, Work Disk Free: 10587 GB, Tmp Disk Free: 78 GB
 Loading db file '/home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db'
 
 
@@ -406,7 +463,7 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
   ---------------------
 Information: State dependent leakage is now switched from off to on.
 Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
-CPU Load: 6%, Ram Free: 105 GB, Swap Free: 31 GB, Work Disk Free: 10595 GB, Tmp Disk Free: 79 GB
+CPU Load: 6%, Ram Free: 98 GB, Swap Free: 31 GB, Work Disk Free: 10587 GB, Tmp Disk Free: 78 GB
 Information: Total number of MV cells in the design.
 ----------------------------------------------------------------------------------------------------
  MV Cells                                           Total Number                                   
@@ -427,14 +484,15 @@ Unmapped MV Cells
 0 Retention Clamp Cells are unmapped 
 ----------------------------------------------------------------------------------------------------
 1
-# 6. Generar los 5 reportes obligatorios del Punto 8
-report_qor                        > reportes/dc_1_report_qor.rpt
-report_timing -max_paths 5        > reportes/dc_2_report_timing.rpt
-report_area -hierarchy            > reportes/dc_3_report_area.rpt
-report_power                      > reportes/dc_4_report_power.rpt
-report_constraint -all_violators  > reportes/dc_5_report_violators.rpt
-report_clock_gating               > reportes/dc_6_report_clock_gating.rpt
-# 7. Exportar Netlist y SDC para IC Compiler II
+# 7. Generar reportes de síntesis
+report_qor                                 > reportes/dc_1_report_qor.rpt
+report_timing -delay_type max -max_paths 5 > reportes/dc_2_report_timing.rpt
+report_timing -delay_type min -max_paths 5 > reportes/dc_2_report_timing_hold.rpt
+report_area -hierarchy                     > reportes/dc_3_report_area.rpt
+report_power                               > reportes/dc_4_report_power.rpt
+report_constraint -all_violators           > reportes/dc_5_report_violators.rpt
+report_clock_gating                        > reportes/dc_6_report_clock_gating.rpt
+# 8. Exportar Netlist y SDC para IC Compiler II
 change_names -rules verilog -hierarchy
 Warning: In the design Top_ALU_secuencial, net 'result[15]' is connecting multiple ports. (UCN-1)
 1
@@ -451,7 +509,7 @@ exit
 
 Memory usage for this session 496 Mbytes.
 Memory usage for this session including child processes 496 Mbytes.
-CPU usage for this session 23 seconds ( 0.01 hours ).
-Elapsed time for this session 25 seconds ( 0.01 hours ).
+CPU usage for this session 32 seconds ( 0.01 hours ).
+Elapsed time for this session 33 seconds ( 0.01 hours ).
 
 Thank you...

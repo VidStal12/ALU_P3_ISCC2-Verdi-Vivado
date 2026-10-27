@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : Top_ALU_secuencial
 Version: X-2025.06-SP5-5
-Date   : Sat Oct 24 16:07:51 2026
+Date   : Mon Oct 26 20:38:08 2026
 ****************************************
 
 
@@ -19,7 +19,33 @@ Wire Load Model Mode: enclosed
 Design        Wire Load Model            Library
 ------------------------------------------------
 Top_ALU_secuencial     MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
-SNPS_CLOCK_GATE_HIGH_divisor_ancho16
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_13
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_0
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_1
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_2
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_3
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_4
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_5
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_6
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_7
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_8
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_9
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_10
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_11
+                       MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
+SNPS_CLOCK_GATE_HIGH_divisor_ancho16_12
                        MW0K              M31LLSC750GL150MS_25CTT1P8_ctyp_ccs
 
 
@@ -37,12 +63,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =  68.3502 uW   (72%)
-  Net Switching Power  =  26.5117 uW   (28%)
+  Cell Internal Power  =  88.0212 uW   (69%)
+  Net Switching Power  =  39.6115 uW   (31%)
                          ---------
-Total Dynamic Power    =  94.8618 uW  (100%)
+Total Dynamic Power    = 127.6327 uW  (100%)
 
-Cell Leakage Power     =   1.3203 nW
+Cell Leakage Power     =   2.1172 nW
 
 
                  Internal         Switching           Leakage            Total
@@ -51,10 +77,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  4.7198e-02        9.0839e-03            1.4903        5.6282e-02  (  59.33%)  i
-register       7.3283e-03        2.3037e-03          258.0983        9.6322e-03  (  10.15%)
+clock_network  5.2686e-02        8.5006e-03           20.8347        6.1187e-02  (  47.94%)  i
+register       8.7790e-03        2.6177e-03          318.0950        1.1397e-02  (   8.93%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.3824e-02        1.5124e-02        1.0607e+03        2.8949e-02  (  30.52%)
+combinational  2.6556e-02        2.8493e-02        1.7783e+03        5.5051e-02  (  43.13%)
 --------------------------------------------------------------------------------------------------
-Total          6.8350e-02 mW     2.6512e-02 mW     1.3203e+03 pW     9.4863e-02 mW
+Total          8.8021e-02 mW     3.9612e-02 mW     2.1172e+03 pW         0.1276 mW
 1

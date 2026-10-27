@@ -6,8 +6,222 @@ Report : timing
         -report_by design
 Design : Top_ALU_secuencial
 Version: Y-2026.03-SP2
-Date   : Sat Oct 24 18:29:14 2026
+Date   : Mon Oct 26 20:39:07 2026
 ****************************************
+
+  Startpoint: u_alu_u_divisor_b_pipe_reg_0__5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_alu_u_divisor_r_reg_reg_1__8_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: typical
+  Scenario: func_typical
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  u_alu_u_divisor_b_pipe_reg_0__5_/CK (DFFRBQX2TAS7)
+                                                   0.00      0.00 r
+  u_alu_u_divisor_b_pipe_reg_0__5_/Q (DFFRBQX2TAS7)
+                                                   2.48      2.48 r
+  U3328/O (CLKINVX1TAS7)                           0.59      3.08 f
+  U1075/O (NOR2X2TAS7)                             0.83      3.91 r
+  U1839/O (CLKINVX1TAS7)                           0.52      4.44 f
+  U1840/O (NAND2X1TAS7)                            0.56      5.00 r
+  U1838/O (NAND2X1TAS7)                            0.51      5.51 f
+  U3339/O (AOI12X1TAS7)                            1.00      6.51 r
+  U2679/O (CLKINVX1TAS7)                           0.52      7.03 f
+  U2680/O (NOR2X2TAS7)                             0.89      7.92 r
+  U1089/O (CLKINVX3TAS7)                           0.64      8.56 f
+  U3370/O (AOI12X1TAS7)                            1.16      9.72 r
+  U1945/O (XOR2X2TAS7)                             2.05     11.77 f
+  U1943/O (INVX4TAS7)                              0.59     12.36 r
+  U1944/O (INVX4TAS7)                              0.34     12.70 f
+  U3396/O (NAND2X1TAS7)                            0.43     13.13 r
+  U3397/O (NAND2X1TAS7)                            0.53     13.66 f
+  U3399/O (NOR2X1TAS7)                             0.70     14.37 r
+  U1691/O (BUFX1TAS7)                              0.99     15.36 r
+  U3413/O (OAI12X1TAS7)                            0.44     15.80 f
+  U3414/O (AOI12X1TAS7)                            0.82     16.62 r
+  U1435/O (CLKINVX1TAS7)                           0.41     17.03 f
+  U680/O (INVX1TAS7)                               0.63     17.66 r
+  U2686/O (NOR2X1TAS7)                             0.29     17.95 f
+  U678/O (NOR2X1TAS7)                              0.87     18.83 r
+  U675/O (CLKINVX2TAS7)                            0.81     19.64 f
+  U3547/O (AOI12X1TAS7)                            1.23     20.87 r
+  U727/O (XOR2X1TAS7)                              1.60     22.47 r
+  U2586/O (BUFX3TAS7)                              0.95     23.42 r
+  U2585/O (INVX8TAS7)                              0.30     23.72 f
+  U1941/O (INVX12TAS7)                             0.61     24.33 r
+  U719/O (INVX8TAS7)                               0.40     24.73 f
+  U1806/O (CLKINVX1TAS7)                           0.55     25.28 r
+  U1808/O (NAND2X1TAS7)                            0.47     25.75 f
+  U1805/O (NAND2X2TAS7)                            0.68     26.43 r
+  U3643/O (NOR2X1TAS7)                             0.26     26.69 f
+  U2527/O (BUFX1TAS7)                              0.81     27.50 f
+  U2525/O (CLKINVX1TAS7)                           0.57     28.08 r
+  U2526/O (CLKINVX2TAS7)                           0.46     28.53 f
+  U3649/O (NOR2X1TAS7)                             0.72     29.26 r
+  U1355/O (CLKINVX1TAS7)                           0.47     29.72 f
+  U1356/O (CLKINVX1TAS7)                           0.56     30.28 r
+  U3681/O (NAND2X1TAS7)                            0.47     30.75 f
+  U3682/O (NOR2X1TAS7)                             0.80     31.55 r
+  U715/O (CLKINVX1TAS7)                            0.40     31.95 f
+  U716/O (AOI12B2X2TAS7)                           1.49     33.43 f
+  U648/O (XOR2X4TAS7)                              2.40     35.83 f
+  U2537/O (BUFX3TAS7)                              1.23     37.06 f
+  U1764/O (MUX2X2TAS7)                             1.92     38.97 f
+  U2002/O (NOR2X4TAS7)                             0.77     39.75 r
+  U1999/O (CLKINVX1TAS7)                           0.39     40.14 f
+  U2000/O (NAND2X1TAS7)                            0.50     40.64 r
+  U1997/O (NAND2X1TAS7)                            0.33     40.97 f
+  U1995/O (CLKINVX1TAS7)                           0.50     41.47 r
+  U1996/O (CLKINVX1TAS7)                           0.44     41.91 f
+  U3781/O (AOI12X1TAS7)                            0.87     42.78 r
+  U2576/O (BUFX1TAS7)                              0.75     43.54 r
+  U2573/O (CLKINVX1TAS7)                           0.35     43.89 f
+  U2574/O (CLKINVX1TAS7)                           0.53     44.42 r
+  U3787/O (OAI12X1TAS7)                            0.39     44.81 f
+  U865/O (CLKINVX1TAS7)                            0.54     45.35 r
+  U868/O (NAND2X1TAS7)                             0.37     45.72 f
+  U864/O (NAND2X1TAS7)                             0.65     46.37 r
+  U3788/O (XOR2X1TAS7)                             1.63     48.00 f
+  U3796/O (NOR2X1TAS7)                             0.66     48.66 r
+  U2584/O (BUFX1TAS7)                              0.96     49.62 r
+  U2581/O (CLKINVX2TAS7)                           0.69     50.31 f
+  U610/O (INVX2TAS7)                               0.79     51.11 r
+  U2045/O (CLKINVX1TAS7)                           0.50     51.60 f
+  U2046/O (NOR2X2TAS7)                             0.69     52.30 r
+  U1652/O (OR2X1TAS7)                              0.63     52.93 r
+  U2044/O (NOR2X1TAS7)                             0.24     53.17 f
+  U3891/O (CLKINVX1TAS7)                           0.35     53.52 r
+  u_alu_u_divisor_r_reg_reg_1__8_/D (DFFRBQX1TAS7)
+                                                   0.00     53.52 r
+  data arrival time                                         53.52
+
+  clock clk (rise edge)                           60.00     60.00
+  clock network delay (ideal)                      0.00     60.00
+  u_alu_u_divisor_r_reg_reg_1__8_/CK (DFFRBQX1TAS7)
+                                                   0.00     60.00 r
+  clock uncertainty                               -0.20     59.80
+  library setup time                              -1.23     58.57
+  data required time                                        58.57
+  ------------------------------------------------------------------------
+  data required time                                        58.57
+  data arrival time                                        -53.52
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.05
+
+
+
+  Startpoint: u_alu_u_divisor_b_pipe_reg_0__5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_alu_u_divisor_r_reg_reg_1__4_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: typical
+  Scenario: func_typical
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  u_alu_u_divisor_b_pipe_reg_0__5_/CK (DFFRBQX2TAS7)
+                                                   0.00      0.00 r
+  u_alu_u_divisor_b_pipe_reg_0__5_/Q (DFFRBQX2TAS7)
+                                                   2.48      2.48 r
+  U3328/O (CLKINVX1TAS7)                           0.59      3.08 f
+  U1075/O (NOR2X2TAS7)                             0.83      3.91 r
+  U1839/O (CLKINVX1TAS7)                           0.52      4.44 f
+  U1840/O (NAND2X1TAS7)                            0.56      5.00 r
+  U1838/O (NAND2X1TAS7)                            0.51      5.51 f
+  U3339/O (AOI12X1TAS7)                            1.00      6.51 r
+  U2679/O (CLKINVX1TAS7)                           0.52      7.03 f
+  U2680/O (NOR2X2TAS7)                             0.89      7.92 r
+  U1089/O (CLKINVX3TAS7)                           0.64      8.56 f
+  U3370/O (AOI12X1TAS7)                            1.16      9.72 r
+  U1945/O (XOR2X2TAS7)                             2.05     11.77 f
+  U1943/O (INVX4TAS7)                              0.59     12.36 r
+  U1944/O (INVX4TAS7)                              0.34     12.70 f
+  U3396/O (NAND2X1TAS7)                            0.43     13.13 r
+  U3397/O (NAND2X1TAS7)                            0.53     13.66 f
+  U3399/O (NOR2X1TAS7)                             0.70     14.37 r
+  U1691/O (BUFX1TAS7)                              0.99     15.36 r
+  U3413/O (OAI12X1TAS7)                            0.44     15.80 f
+  U3414/O (AOI12X1TAS7)                            0.82     16.62 r
+  U1435/O (CLKINVX1TAS7)                           0.41     17.03 f
+  U680/O (INVX1TAS7)                               0.63     17.66 r
+  U2686/O (NOR2X1TAS7)                             0.29     17.95 f
+  U678/O (NOR2X1TAS7)                              0.87     18.83 r
+  U675/O (CLKINVX2TAS7)                            0.81     19.64 f
+  U3547/O (AOI12X1TAS7)                            1.23     20.87 r
+  U727/O (XOR2X1TAS7)                              1.60     22.47 r
+  U2586/O (BUFX3TAS7)                              0.95     23.42 r
+  U2585/O (INVX8TAS7)                              0.30     23.72 f
+  U1941/O (INVX12TAS7)                             0.61     24.33 r
+  U719/O (INVX8TAS7)                               0.40     24.73 f
+  U1806/O (CLKINVX1TAS7)                           0.55     25.28 r
+  U1808/O (NAND2X1TAS7)                            0.47     25.75 f
+  U1805/O (NAND2X2TAS7)                            0.68     26.43 r
+  U3643/O (NOR2X1TAS7)                             0.26     26.69 f
+  U2527/O (BUFX1TAS7)                              0.81     27.50 f
+  U2525/O (CLKINVX1TAS7)                           0.57     28.08 r
+  U2526/O (CLKINVX2TAS7)                           0.46     28.53 f
+  U3649/O (NOR2X1TAS7)                             0.72     29.26 r
+  U1355/O (CLKINVX1TAS7)                           0.47     29.72 f
+  U1356/O (CLKINVX1TAS7)                           0.56     30.28 r
+  U3681/O (NAND2X1TAS7)                            0.47     30.75 f
+  U3682/O (NOR2X1TAS7)                             0.80     31.55 r
+  U715/O (CLKINVX1TAS7)                            0.40     31.95 f
+  U716/O (AOI12B2X2TAS7)                           1.49     33.43 f
+  U648/O (XOR2X4TAS7)                              2.40     35.83 f
+  U2537/O (BUFX3TAS7)                              1.23     37.06 f
+  U1764/O (MUX2X2TAS7)                             1.92     38.97 f
+  U2002/O (NOR2X4TAS7)                             0.77     39.75 r
+  U1999/O (CLKINVX1TAS7)                           0.39     40.14 f
+  U2000/O (NAND2X1TAS7)                            0.50     40.64 r
+  U1997/O (NAND2X1TAS7)                            0.33     40.97 f
+  U1995/O (CLKINVX1TAS7)                           0.50     41.47 r
+  U1996/O (CLKINVX1TAS7)                           0.44     41.91 f
+  U3781/O (AOI12X1TAS7)                            0.87     42.78 r
+  U2576/O (BUFX1TAS7)                              0.75     43.54 r
+  U2573/O (CLKINVX1TAS7)                           0.35     43.89 f
+  U2574/O (CLKINVX1TAS7)                           0.53     44.42 r
+  U3787/O (OAI12X1TAS7)                            0.39     44.81 f
+  U865/O (CLKINVX1TAS7)                            0.54     45.35 r
+  U868/O (NAND2X1TAS7)                             0.37     45.72 f
+  U864/O (NAND2X1TAS7)                             0.65     46.37 r
+  U3788/O (XOR2X1TAS7)                             1.63     48.00 f
+  U3796/O (NOR2X1TAS7)                             0.66     48.66 r
+  U2584/O (BUFX1TAS7)                              0.96     49.62 r
+  U2581/O (CLKINVX2TAS7)                           0.69     50.31 f
+  U610/O (INVX2TAS7)                               0.79     51.11 r
+  U2054/O (CLKINVX1TAS7)                           0.50     51.60 f
+  U2055/O (NOR2X2TAS7)                             0.69     52.30 r
+  U1651/O (OR2X1TAS7)                              0.63     52.93 r
+  U2053/O (NOR2X1TAS7)                             0.24     53.17 f
+  U3904/O (CLKINVX1TAS7)                           0.35     53.52 r
+  u_alu_u_divisor_r_reg_reg_1__4_/D (DFFRBQX1TAS7)
+                                                   0.00     53.52 r
+  data arrival time                                         53.52
+
+  clock clk (rise edge)                           60.00     60.00
+  clock network delay (ideal)                      0.00     60.00
+  u_alu_u_divisor_r_reg_reg_1__4_/CK (DFFRBQX1TAS7)
+                                                   0.00     60.00 r
+  clock uncertainty                               -0.20     59.80
+  library setup time                              -1.23     58.57
+  data required time                                        58.57
+  ------------------------------------------------------------------------
+  data required time                                        58.57
+  data arrival time                                        -53.52
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.05
+
+
 
   Startpoint: u_alu_u_divisor_b_pipe_reg_2__9_ (rising edge-triggered flip-flop clocked by clk)
   Endpoint: flag_z_reg (rising edge-triggered flip-flop clocked by clk)
@@ -20,70 +234,108 @@ Date   : Sat Oct 24 18:29:14 2026
   Point                                            Incr      Path  
   ------------------------------------------------------------------------
   clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                50.71     50.71
+  clock network delay (ideal)                      0.00      0.00
 
-  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX1TAS7)
-                                                   0.00     50.71 r
-  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX1TAS7)
-                                                   3.77     54.48 r
-  U2262/O (CLKINVX1TAS7)                           0.97     55.44 f
-  U2263/O (NOR2X1TAS7)                             1.60     57.04 r
-  U2284/O (OAI12X1TAS7)                            0.78     57.83 f
-  U2288/O (AOI12X1TAS7)                            2.06     59.88 r
-  U2296/O (OAI12X1TAS7)                            0.64     60.52 f
-  U2297/O (AOI12X1TAS7)                            1.15     61.67 r
-  U611/O (XOR2X4TAS7)                              3.07     64.74 f
-  U2298/O (INVX4TAS7)                              1.05     65.78 r
-  U2353/O (NAND2X1TAS7)                            0.45     66.23 f
-  U2355/O (NAND2X1TAS7)                            0.74     66.98 r
-  U2356/O (NOR2X1TAS7)                             0.46     67.43 f
-  U2357/O (NOR2X1TAS7)                             1.34     68.78 r
-  U2376/O (NAND2X1TAS7)                            0.66     69.43 f
-  U2384/O (OAI12X2TAS7)                            2.17     71.60 r
-  U2492/O (AOI12X1TAS7)                            0.87     72.47 f
-  U2493/O (XOR2X2TAS7)                             2.64     75.12 r
-  U636/O (CLKINVX1TAS7)                            2.01     77.13 f
-  U2541/O (AOI12X1TAS7)                            1.94     79.06 r
-  U2542/O (NOR2X1TAS7)                             0.59     79.65 f
-  U2543/O (NOR2X1TAS7)                             1.34     80.99 r
-  U2562/O (NAND2X1TAS7)                            0.52     81.52 f
-  U640/O (OAI12X1TAS7)                             3.24     84.76 r
-  U2677/O (AOI12X1TAS7)                            1.03     85.80 f
-  U2678/O (XOR2X4TAS7)                             3.22     89.02 f
-  U2712/O (MUX2X1TAS7)                             1.87     90.89 r
-  U2713/O (NOR2X1TAS7)                             0.43     91.32 f
-  U2714/O (NOR2X1TAS7)                             1.34     92.67 r
-  U2729/O (NAND2X1TAS7)                            0.52     93.19 f
-  U638/O (OAI12X1TAS7)                             3.24     96.43 r
-  U2822/O (AOI12X1TAS7)                            1.03     97.47 f
-  U612/O (XOR2X1TAS7)                              1.82     99.29 f
-  U2823/O (CLKINVX2TAS7)                           0.37     99.66 r
-  U609/O (NOR2X1TAS7)                              0.30     99.96 f
-  U2845/O (NAND2X1TAS7)                            2.07    102.03 r
-  U2846/O (CLKINVX1TAS7)                           0.87    102.90 f
-  U2848/O (AOI12X1TAS7)                            1.04    103.94 r
-  U2862/O (OAI12X1TAS7)                            0.63    104.57 f
-  U3089/O (NOR4X1TAS7)                             1.66    106.24 r
-  U3093/O (AND4X1TAS7)                             1.55    107.79 r
-  flag_z_reg/D (DFFRBQX1TAS7)                      0.00    107.79 r
-  data arrival time                                        107.79
+  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX2TAS7)
+                                                   0.00      0.00 r
+  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX2TAS7)
+                                                   2.35      2.35 r
+  U4004/O (CLKINVX4TAS7)                           0.54      2.89 f
+  U1675/O (NOR2X1TAS7)                             1.05      3.93 r
+  U2433/O (CLKINVX1TAS7)                           0.61      4.54 f
+  U2434/O (NAND2X1TAS7)                            0.59      5.13 r
+  U2431/O (NAND2X1TAS7)                            0.32      5.45 f
+  U2430/O (BUFX1TAS7)                              0.94      6.39 f
+  U2388/O (CLKINVX1TAS7)                           0.41      6.80 r
+  U2390/O (NAND2X1TAS7)                            0.34      7.14 f
+  U2386/O (NAND2X1TAS7)                            0.56      7.70 r
+  U4031/O (OAI12X1TAS7)                            0.42      8.12 f
+  U1743/O (AOI12X1TAS7)                            1.10      9.23 r
+  U1742/O (CLKINVX1TAS7)                           0.49      9.71 f
+  U1738/O (NAND2X1TAS7)                            0.70     10.41 r
+  U1740/O (NAND2X2TAS7)                            0.46     10.87 f
+  U1744/O (CLKINVX4TAS7)                           0.98     11.85 r
+  U2563/O (INVX8TAS7)                              0.44     12.29 f
+  U4127/O (NAND2X1TAS7)                            0.55     12.85 r
+  U4128/O (NAND2X1TAS7)                            0.53     13.37 f
+  U4129/O (NOR2X1TAS7)                             0.71     14.08 r
+  U1698/O (BUFX1TAS7)                              0.99     15.07 r
+  U4171/O (OAI12X1TAS7)                            0.43     15.50 f
+  U2418/O (CLKINVX1TAS7)                           0.38     15.88 r
+  U2419/O (CLKINVX1TAS7)                           0.45     16.32 f
+  U4176/O (AOI12X1TAS7)                            0.98     17.30 r
+  U2392/O (CLKINVX1TAS7)                           0.48     17.78 f
+  U2393/O (CLKINVX1TAS7)                           0.70     18.48 r
+  U4204/O (OAI12X1TAS7)                            0.45     18.93 f
+  U4205/O (AOI12X1TAS7)                            1.10     20.03 r
+  U1890/O (XOR2X2TAS7)                             1.82     21.86 r
+  U1769/O (CLKINVX2TAS7)                           0.47     22.32 f
+  U1768/O (BUFX20TAS7)                             1.22     23.54 f
+  U673/O (CLKINVX12TAS7)                           0.52     24.06 r
+  U4212/O (NAND2B1X1TAS7)                          0.40     24.46 f
+  U1914/O (CLKINVX2TAS7)                           0.50     24.97 r
+  U1913/O (AOI12X4TAS7)                            0.27     25.23 f
+  U4213/O (NOR2X1TAS7)                             0.72     25.95 r
+  U1697/O (CLKINVX1TAS7)                           0.39     26.34 f
+  U669/O (INVX1TAS7)                               0.64     26.98 r
+  U4218/O (NOR2X1TAS7)                             0.29     27.26 f
+  U1446/O (CLKINVX1TAS7)                           0.36     27.63 r
+  U1448/O (NAND2X1TAS7)                            0.34     27.96 f
+  U1443/O (NAND2X1TAS7)                            0.58     28.55 r
+  U2689/O (NOR2X1TAS7)                             0.28     28.82 f
+  U659/O (NOR2X1TAS7)                              0.86     29.69 r
+  U656/O (CLKINVX2TAS7)                            0.82     30.51 f
+  U4355/O (AOI12X1TAS7)                            1.25     31.76 r
+  U696/O (XNOR2X1TAS7)                             1.79     33.54 r
+  U654/O (INVX2TAS7)                               0.27     33.82 f
+  U650/O (INVX3TAS7)                               0.70     34.52 r
+  U1773/O (CLKINVX8TAS7)                           0.49     35.01 f
+  U1897/O (MUX2X4TAS7)                             2.42     37.43 f
+  U1916/O (NOR2X4TAS7)                             0.83     38.25 r
+  U1915/O (OAI12X1TAS7)                            0.43     38.68 f
+  U1613/O (CLKINVX1TAS7)                           0.38     39.06 r
+  U792/O (CLKINVX1TAS7)                            0.43     39.49 f
+  U4452/O (AOI12X1TAS7)                            0.90     40.39 r
+  U2556/O (BUFX1TAS7)                              0.75     41.14 r
+  U2553/O (CLKINVX1TAS7)                           0.35     41.50 f
+  U2554/O (CLKINVX1TAS7)                           0.53     42.02 r
+  U4459/O (OAI12X1TAS7)                            0.39     42.42 f
+  U876/O (CLKINVX1TAS7)                            0.54     42.95 r
+  U879/O (NAND2X1TAS7)                             0.37     43.33 f
+  U875/O (NAND2X1TAS7)                             0.62     43.95 r
+  U4460/O (XOR2X1TAS7)                             1.59     45.54 r
+  U625/O (CLKINVX1TAS7)                            0.51     46.06 f
+  U1771/O (NOR2X2TAS7)                             0.94     46.99 r
+  U4483/O (NAND2X1TAS7)                            0.66     47.65 f
+  U2598/O (BUFX8TAS7)                              1.32     48.97 f
+  U1139/O (OAI112X2TAS7)                           1.02     49.98 r
+  U1138/O (CLKINVX1TAS7)                           0.42     50.41 f
+  U621/O (INVX1TAS7)                               0.54     50.94 r
+  U1861/O (CLKINVX1TAS7)                           0.35     51.30 f
+  U1863/O (NAND2X1TAS7)                            0.49     51.79 r
+  U894/O (NOR2X1TAS7)                              0.26     52.05 f
+  U2370/O (CLKINVX1TAS7)                           0.32     52.37 r
+  U2371/O (CLKINVX1TAS7)                           0.29     52.66 f
+  U2383/O (AND4X1TAS7)                             0.83     53.49 f
+  flag_z_reg/D (DFFRBQX2TAS7)                      0.00     53.49 f
+  data arrival time                                         53.49
 
   clock clk (rise edge)                           60.00     60.00
-  clock network delay (propagated)                 0.00     60.00
-  flag_z_reg/CK (DFFRBQX1TAS7)                     0.00     60.00 r
+  clock network delay (ideal)                      0.00     60.00
+  flag_z_reg/CK (DFFRBQX2TAS7)                     0.00     60.00 r
   clock uncertainty                               -0.20     59.80
-  library setup time                              -1.27     58.53
-  data required time                                        58.53
+  library setup time                              -1.14     58.66
+  data required time                                        58.66
   ------------------------------------------------------------------------
-  data required time                                        58.53
-  data arrival time                                        -107.79
+  data required time                                        58.66
+  data arrival time                                        -53.49
   ------------------------------------------------------------------------
-  slack (VIOLATED)                                         -49.26
+  slack (MET)                                                5.16
 
 
 
-  Startpoint: u_alu_u_divisor_b_pipe_reg_2__9_ (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: R_0 (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: u_alu_u_divisor_b_pipe_reg_0__5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_alu_u_divisor_r_reg_reg_1__12_ (rising edge-triggered flip-flop clocked by clk)
   Mode: func
   Corner: typical
   Scenario: func_typical
@@ -93,65 +345,104 @@ Date   : Sat Oct 24 18:29:14 2026
   Point                                            Incr      Path  
   ------------------------------------------------------------------------
   clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                50.71     50.71
+  clock network delay (ideal)                      0.00      0.00
 
-  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX1TAS7)
-                                                   0.00     50.71 r
-  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX1TAS7)
-                                                   3.77     54.48 r
-  U2262/O (CLKINVX1TAS7)                           0.97     55.44 f
-  U2263/O (NOR2X1TAS7)                             1.60     57.04 r
-  U2284/O (OAI12X1TAS7)                            0.78     57.83 f
-  U2288/O (AOI12X1TAS7)                            2.06     59.88 r
-  U2296/O (OAI12X1TAS7)                            0.64     60.52 f
-  U2297/O (AOI12X1TAS7)                            1.15     61.67 r
-  U611/O (XOR2X4TAS7)                              3.07     64.74 f
-  U2298/O (INVX4TAS7)                              1.05     65.78 r
-  U2353/O (NAND2X1TAS7)                            0.45     66.23 f
-  U2355/O (NAND2X1TAS7)                            0.74     66.98 r
-  U2356/O (NOR2X1TAS7)                             0.46     67.43 f
-  U2357/O (NOR2X1TAS7)                             1.34     68.78 r
-  U2376/O (NAND2X1TAS7)                            0.66     69.43 f
-  U2384/O (OAI12X2TAS7)                            2.17     71.60 r
-  U2492/O (AOI12X1TAS7)                            0.87     72.47 f
-  U2493/O (XOR2X2TAS7)                             2.64     75.12 r
-  U636/O (CLKINVX1TAS7)                            2.01     77.13 f
-  U2541/O (AOI12X1TAS7)                            1.94     79.06 r
-  U2542/O (NOR2X1TAS7)                             0.59     79.65 f
-  U2543/O (NOR2X1TAS7)                             1.34     80.99 r
-  U2562/O (NAND2X1TAS7)                            0.52     81.52 f
-  U640/O (OAI12X1TAS7)                             3.24     84.76 r
-  U2677/O (AOI12X1TAS7)                            1.03     85.80 f
-  U2678/O (XOR2X4TAS7)                             3.22     89.02 f
-  U2712/O (MUX2X1TAS7)                             1.87     90.89 r
-  U2713/O (NOR2X1TAS7)                             0.43     91.32 f
-  U2714/O (NOR2X1TAS7)                             1.34     92.67 r
-  U2729/O (NAND2X1TAS7)                            0.52     93.19 f
-  U638/O (OAI12X1TAS7)                             3.24     96.43 r
-  U2822/O (AOI12X1TAS7)                            1.03     97.47 f
-  U612/O (XOR2X1TAS7)                              1.82     99.29 f
-  U614/O (NOR2X1TAS7)                              4.52    103.81 r
-  U3087/O (AOI112X1TAS7)                           1.13    104.94 f
-  U3088/O (OAI112X1TAS7)                           1.07    106.01 r
-  R_0/D (DFFRBQX1TAS7)                             0.00    106.01 r
-  data arrival time                                        106.01
+  u_alu_u_divisor_b_pipe_reg_0__5_/CK (DFFRBQX2TAS7)
+                                                   0.00      0.00 r
+  u_alu_u_divisor_b_pipe_reg_0__5_/Q (DFFRBQX2TAS7)
+                                                   2.48      2.48 r
+  U3328/O (CLKINVX1TAS7)                           0.59      3.08 f
+  U1075/O (NOR2X2TAS7)                             0.83      3.91 r
+  U1839/O (CLKINVX1TAS7)                           0.52      4.44 f
+  U1840/O (NAND2X1TAS7)                            0.56      5.00 r
+  U1838/O (NAND2X1TAS7)                            0.51      5.51 f
+  U3339/O (AOI12X1TAS7)                            1.00      6.51 r
+  U2679/O (CLKINVX1TAS7)                           0.52      7.03 f
+  U2680/O (NOR2X2TAS7)                             0.89      7.92 r
+  U1089/O (CLKINVX3TAS7)                           0.64      8.56 f
+  U3370/O (AOI12X1TAS7)                            1.16      9.72 r
+  U1945/O (XOR2X2TAS7)                             2.05     11.77 f
+  U1943/O (INVX4TAS7)                              0.59     12.36 r
+  U1944/O (INVX4TAS7)                              0.34     12.70 f
+  U3396/O (NAND2X1TAS7)                            0.43     13.13 r
+  U3397/O (NAND2X1TAS7)                            0.53     13.66 f
+  U3399/O (NOR2X1TAS7)                             0.70     14.37 r
+  U1691/O (BUFX1TAS7)                              0.99     15.36 r
+  U3413/O (OAI12X1TAS7)                            0.44     15.80 f
+  U3414/O (AOI12X1TAS7)                            0.82     16.62 r
+  U1435/O (CLKINVX1TAS7)                           0.41     17.03 f
+  U680/O (INVX1TAS7)                               0.63     17.66 r
+  U2686/O (NOR2X1TAS7)                             0.29     17.95 f
+  U678/O (NOR2X1TAS7)                              0.87     18.83 r
+  U675/O (CLKINVX2TAS7)                            0.81     19.64 f
+  U3547/O (AOI12X1TAS7)                            1.23     20.87 r
+  U727/O (XOR2X1TAS7)                              1.60     22.47 r
+  U2586/O (BUFX3TAS7)                              0.95     23.42 r
+  U2585/O (INVX8TAS7)                              0.30     23.72 f
+  U1941/O (INVX12TAS7)                             0.61     24.33 r
+  U719/O (INVX8TAS7)                               0.40     24.73 f
+  U1806/O (CLKINVX1TAS7)                           0.55     25.28 r
+  U1808/O (NAND2X1TAS7)                            0.47     25.75 f
+  U1805/O (NAND2X2TAS7)                            0.68     26.43 r
+  U3643/O (NOR2X1TAS7)                             0.26     26.69 f
+  U2527/O (BUFX1TAS7)                              0.81     27.50 f
+  U2525/O (CLKINVX1TAS7)                           0.57     28.08 r
+  U2526/O (CLKINVX2TAS7)                           0.46     28.53 f
+  U3649/O (NOR2X1TAS7)                             0.72     29.26 r
+  U1355/O (CLKINVX1TAS7)                           0.47     29.72 f
+  U1356/O (CLKINVX1TAS7)                           0.56     30.28 r
+  U3681/O (NAND2X1TAS7)                            0.47     30.75 f
+  U3682/O (NOR2X1TAS7)                             0.80     31.55 r
+  U715/O (CLKINVX1TAS7)                            0.40     31.95 f
+  U716/O (AOI12B2X2TAS7)                           1.49     33.43 f
+  U648/O (XOR2X4TAS7)                              2.40     35.83 f
+  U2537/O (BUFX3TAS7)                              1.23     37.06 f
+  U1764/O (MUX2X2TAS7)                             1.92     38.97 f
+  U2002/O (NOR2X4TAS7)                             0.77     39.75 r
+  U1999/O (CLKINVX1TAS7)                           0.39     40.14 f
+  U2000/O (NAND2X1TAS7)                            0.50     40.64 r
+  U1997/O (NAND2X1TAS7)                            0.33     40.97 f
+  U1995/O (CLKINVX1TAS7)                           0.50     41.47 r
+  U1996/O (CLKINVX1TAS7)                           0.44     41.91 f
+  U3781/O (AOI12X1TAS7)                            0.87     42.78 r
+  U2576/O (BUFX1TAS7)                              0.75     43.54 r
+  U2573/O (CLKINVX1TAS7)                           0.35     43.89 f
+  U2574/O (CLKINVX1TAS7)                           0.53     44.42 r
+  U3787/O (OAI12X1TAS7)                            0.39     44.81 f
+  U865/O (CLKINVX1TAS7)                            0.54     45.35 r
+  U868/O (NAND2X1TAS7)                             0.37     45.72 f
+  U864/O (NAND2X1TAS7)                             0.65     46.37 r
+  U3788/O (XOR2X1TAS7)                             1.63     48.00 f
+  U3796/O (NOR2X1TAS7)                             0.66     48.66 r
+  U2584/O (BUFX1TAS7)                              0.96     49.62 r
+  U2581/O (CLKINVX2TAS7)                           0.69     50.31 f
+  U1917/O (CLKINVX2TAS7)                           0.66     50.97 r
+  U2280/O (NAND2X1TAS7)                            0.37     51.34 f
+  U717/O (AND2X1TAS7)                              0.67     52.01 f
+  U2283/O (NAND2X1TAS7)                            0.44     52.45 r
+  U2279/O (CLKINVX1TAS7)                           0.30     52.75 f
+  U3877/O (CLKINVX1TAS7)                           0.35     53.10 r
+  u_alu_u_divisor_r_reg_reg_1__12_/D (DFFRBQX4TAS7)
+                                                   0.00     53.10 r
+  data arrival time                                         53.10
 
   clock clk (rise edge)                           60.00     60.00
-  clock network delay (propagated)                 0.00     60.00
-  R_0/CK (DFFRBQX1TAS7)                            0.00     60.00 r
+  clock network delay (ideal)                      0.00     60.00
+  u_alu_u_divisor_r_reg_reg_1__12_/CK (DFFRBQX4TAS7)
+                                                   0.00     60.00 r
   clock uncertainty                               -0.20     59.80
-  library setup time                              -1.48     58.32
-  data required time                                        58.32
+  library setup time                              -1.18     58.62
+  data required time                                        58.62
   ------------------------------------------------------------------------
-  data required time                                        58.32
-  data arrival time                                        -106.01
+  data required time                                        58.62
+  data arrival time                                        -53.10
   ------------------------------------------------------------------------
-  slack (VIOLATED)                                         -47.68
+  slack (MET)                                                5.52
 
 
 
-  Startpoint: u_alu_u_divisor_b_pipe_reg_2__9_ (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_reg_2_ (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: u_alu_u_divisor_b_pipe_reg_0__5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_alu_u_divisor_r_reg_reg_1__1_ (rising edge-triggered flip-flop clocked by clk)
   Mode: func
   Corner: typical
   Scenario: func_typical
@@ -161,196 +452,98 @@ Date   : Sat Oct 24 18:29:14 2026
   Point                                            Incr      Path  
   ------------------------------------------------------------------------
   clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                50.71     50.71
+  clock network delay (ideal)                      0.00      0.00
 
-  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX1TAS7)
-                                                   0.00     50.71 r
-  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX1TAS7)
-                                                   3.77     54.48 r
-  U2262/O (CLKINVX1TAS7)                           0.97     55.44 f
-  U2263/O (NOR2X1TAS7)                             1.60     57.04 r
-  U2284/O (OAI12X1TAS7)                            0.78     57.83 f
-  U2288/O (AOI12X1TAS7)                            2.06     59.88 r
-  U2296/O (OAI12X1TAS7)                            0.64     60.52 f
-  U2297/O (AOI12X1TAS7)                            1.15     61.67 r
-  U611/O (XOR2X4TAS7)                              3.07     64.74 f
-  U2298/O (INVX4TAS7)                              1.05     65.78 r
-  U2353/O (NAND2X1TAS7)                            0.45     66.23 f
-  U2355/O (NAND2X1TAS7)                            0.74     66.98 r
-  U2356/O (NOR2X1TAS7)                             0.46     67.43 f
-  U2357/O (NOR2X1TAS7)                             1.34     68.78 r
-  U2376/O (NAND2X1TAS7)                            0.66     69.43 f
-  U2384/O (OAI12X2TAS7)                            2.17     71.60 r
-  U2492/O (AOI12X1TAS7)                            0.87     72.47 f
-  U2493/O (XOR2X2TAS7)                             2.64     75.12 r
-  U636/O (CLKINVX1TAS7)                            2.01     77.13 f
-  U2541/O (AOI12X1TAS7)                            1.94     79.06 r
-  U2542/O (NOR2X1TAS7)                             0.59     79.65 f
-  U2543/O (NOR2X1TAS7)                             1.34     80.99 r
-  U2562/O (NAND2X1TAS7)                            0.52     81.52 f
-  U640/O (OAI12X1TAS7)                             3.24     84.76 r
-  U2677/O (AOI12X1TAS7)                            1.03     85.80 f
-  U2678/O (XOR2X4TAS7)                             3.22     89.02 f
-  U2712/O (MUX2X1TAS7)                             1.87     90.89 r
-  U2713/O (NOR2X1TAS7)                             0.43     91.32 f
-  U2714/O (NOR2X1TAS7)                             1.34     92.67 r
-  U2729/O (NAND2X1TAS7)                            0.52     93.19 f
-  U638/O (OAI12X1TAS7)                             3.24     96.43 r
-  U2822/O (AOI12X1TAS7)                            1.03     97.47 f
-  U612/O (XOR2X1TAS7)                              1.82     99.29 f
-  U614/O (NOR2X1TAS7)                              4.52    103.81 r
-  U2879/O (AOI112X1TAS7)                           1.11    104.92 f
-  U2880/O (OAI12X1TAS7)                            0.93    105.85 r
-  result_reg_2_/D (DFFRBQX1TAS7)                   0.00    105.85 r
-  data arrival time                                        105.85
-
-  clock clk (rise edge)                           60.00     60.00
-  clock network delay (propagated)                 0.00     60.00
-  result_reg_2_/CK (DFFRBQX1TAS7)                  0.00     60.00 r
-  clock uncertainty                               -0.20     59.80
-  library setup time                              -1.47     58.33
-  data required time                                        58.33
-  ------------------------------------------------------------------------
-  data required time                                        58.33
-  data arrival time                                        -105.85
-  ------------------------------------------------------------------------
-  slack (VIOLATED)                                         -47.52
-
-
-
-  Startpoint: u_alu_u_divisor_b_pipe_reg_2__9_ (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_reg_1_ (rising edge-triggered flip-flop clocked by clk)
-  Mode: func
-  Corner: typical
-  Scenario: func_typical
-  Path Group: clk
-  Path Type: max
-
-  Point                                            Incr      Path  
-  ------------------------------------------------------------------------
-  clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                50.71     50.71
-
-  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX1TAS7)
-                                                   0.00     50.71 r
-  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX1TAS7)
-                                                   3.77     54.48 r
-  U2262/O (CLKINVX1TAS7)                           0.97     55.44 f
-  U2263/O (NOR2X1TAS7)                             1.60     57.04 r
-  U2284/O (OAI12X1TAS7)                            0.78     57.83 f
-  U2288/O (AOI12X1TAS7)                            2.06     59.88 r
-  U2296/O (OAI12X1TAS7)                            0.64     60.52 f
-  U2297/O (AOI12X1TAS7)                            1.15     61.67 r
-  U611/O (XOR2X4TAS7)                              3.07     64.74 f
-  U2298/O (INVX4TAS7)                              1.05     65.78 r
-  U2353/O (NAND2X1TAS7)                            0.45     66.23 f
-  U2355/O (NAND2X1TAS7)                            0.74     66.98 r
-  U2356/O (NOR2X1TAS7)                             0.46     67.43 f
-  U2357/O (NOR2X1TAS7)                             1.34     68.78 r
-  U2376/O (NAND2X1TAS7)                            0.66     69.43 f
-  U2384/O (OAI12X2TAS7)                            2.17     71.60 r
-  U2492/O (AOI12X1TAS7)                            0.87     72.47 f
-  U2493/O (XOR2X2TAS7)                             2.64     75.12 r
-  U636/O (CLKINVX1TAS7)                            2.01     77.13 f
-  U2541/O (AOI12X1TAS7)                            1.94     79.06 r
-  U2542/O (NOR2X1TAS7)                             0.59     79.65 f
-  U2543/O (NOR2X1TAS7)                             1.34     80.99 r
-  U2562/O (NAND2X1TAS7)                            0.52     81.52 f
-  U640/O (OAI12X1TAS7)                             3.24     84.76 r
-  U2677/O (AOI12X1TAS7)                            1.03     85.80 f
-  U2678/O (XOR2X4TAS7)                             3.22     89.02 f
-  U2712/O (MUX2X1TAS7)                             1.87     90.89 r
-  U2713/O (NOR2X1TAS7)                             0.43     91.32 f
-  U2714/O (NOR2X1TAS7)                             1.34     92.67 r
-  U2729/O (NAND2X1TAS7)                            0.52     93.19 f
-  U638/O (OAI12X1TAS7)                             3.24     96.43 r
-  U2822/O (AOI12X1TAS7)                            1.03     97.47 f
-  U612/O (XOR2X1TAS7)                              1.82     99.29 f
-  U614/O (NOR2X1TAS7)                              4.52    103.81 r
-  U2861/O (AOI112X1TAS7)                           1.11    104.92 f
-  U2862/O (OAI12X1TAS7)                            0.93    105.85 r
-  result_reg_1_/D (DFFRBQX1TAS7)                   0.00    105.85 r
-  data arrival time                                        105.85
+  u_alu_u_divisor_b_pipe_reg_0__5_/CK (DFFRBQX2TAS7)
+                                                   0.00      0.00 r
+  u_alu_u_divisor_b_pipe_reg_0__5_/Q (DFFRBQX2TAS7)
+                                                   2.48      2.48 r
+  U3328/O (CLKINVX1TAS7)                           0.59      3.08 f
+  U1075/O (NOR2X2TAS7)                             0.83      3.91 r
+  U1839/O (CLKINVX1TAS7)                           0.52      4.44 f
+  U1840/O (NAND2X1TAS7)                            0.56      5.00 r
+  U1838/O (NAND2X1TAS7)                            0.51      5.51 f
+  U3339/O (AOI12X1TAS7)                            1.00      6.51 r
+  U2679/O (CLKINVX1TAS7)                           0.52      7.03 f
+  U2680/O (NOR2X2TAS7)                             0.89      7.92 r
+  U1089/O (CLKINVX3TAS7)                           0.64      8.56 f
+  U3370/O (AOI12X1TAS7)                            1.16      9.72 r
+  U1945/O (XOR2X2TAS7)                             2.05     11.77 f
+  U1943/O (INVX4TAS7)                              0.59     12.36 r
+  U1944/O (INVX4TAS7)                              0.34     12.70 f
+  U3396/O (NAND2X1TAS7)                            0.43     13.13 r
+  U3397/O (NAND2X1TAS7)                            0.53     13.66 f
+  U3399/O (NOR2X1TAS7)                             0.70     14.37 r
+  U1691/O (BUFX1TAS7)                              0.99     15.36 r
+  U3413/O (OAI12X1TAS7)                            0.44     15.80 f
+  U3414/O (AOI12X1TAS7)                            0.82     16.62 r
+  U1435/O (CLKINVX1TAS7)                           0.41     17.03 f
+  U680/O (INVX1TAS7)                               0.63     17.66 r
+  U2686/O (NOR2X1TAS7)                             0.29     17.95 f
+  U678/O (NOR2X1TAS7)                              0.87     18.83 r
+  U675/O (CLKINVX2TAS7)                            0.81     19.64 f
+  U3547/O (AOI12X1TAS7)                            1.23     20.87 r
+  U727/O (XOR2X1TAS7)                              1.60     22.47 r
+  U2586/O (BUFX3TAS7)                              0.95     23.42 r
+  U2585/O (INVX8TAS7)                              0.30     23.72 f
+  U1941/O (INVX12TAS7)                             0.61     24.33 r
+  U719/O (INVX8TAS7)                               0.40     24.73 f
+  U1806/O (CLKINVX1TAS7)                           0.55     25.28 r
+  U1808/O (NAND2X1TAS7)                            0.47     25.75 f
+  U1805/O (NAND2X2TAS7)                            0.68     26.43 r
+  U3643/O (NOR2X1TAS7)                             0.26     26.69 f
+  U2527/O (BUFX1TAS7)                              0.81     27.50 f
+  U2525/O (CLKINVX1TAS7)                           0.57     28.08 r
+  U2526/O (CLKINVX2TAS7)                           0.46     28.53 f
+  U3649/O (NOR2X1TAS7)                             0.72     29.26 r
+  U1355/O (CLKINVX1TAS7)                           0.47     29.72 f
+  U1356/O (CLKINVX1TAS7)                           0.56     30.28 r
+  U3681/O (NAND2X1TAS7)                            0.47     30.75 f
+  U3682/O (NOR2X1TAS7)                             0.80     31.55 r
+  U715/O (CLKINVX1TAS7)                            0.40     31.95 f
+  U716/O (AOI12B2X2TAS7)                           1.49     33.43 f
+  U648/O (XOR2X4TAS7)                              2.40     35.83 f
+  U2537/O (BUFX3TAS7)                              1.23     37.06 f
+  U1764/O (MUX2X2TAS7)                             1.92     38.97 f
+  U2002/O (NOR2X4TAS7)                             0.77     39.75 r
+  U1999/O (CLKINVX1TAS7)                           0.39     40.14 f
+  U2000/O (NAND2X1TAS7)                            0.50     40.64 r
+  U1997/O (NAND2X1TAS7)                            0.33     40.97 f
+  U1995/O (CLKINVX1TAS7)                           0.50     41.47 r
+  U1996/O (CLKINVX1TAS7)                           0.44     41.91 f
+  U3781/O (AOI12X1TAS7)                            0.87     42.78 r
+  U2576/O (BUFX1TAS7)                              0.75     43.54 r
+  U2573/O (CLKINVX1TAS7)                           0.35     43.89 f
+  U2574/O (CLKINVX1TAS7)                           0.53     44.42 r
+  U3787/O (OAI12X1TAS7)                            0.39     44.81 f
+  U865/O (CLKINVX1TAS7)                            0.54     45.35 r
+  U868/O (NAND2X1TAS7)                             0.37     45.72 f
+  U864/O (NAND2X1TAS7)                             0.65     46.37 r
+  U3788/O (XOR2X1TAS7)                             1.63     48.00 f
+  U3796/O (NOR2X1TAS7)                             0.66     48.66 r
+  U2584/O (BUFX1TAS7)                              0.96     49.62 r
+  U2581/O (CLKINVX2TAS7)                           0.69     50.31 f
+  U610/O (INVX2TAS7)                               0.79     51.11 r
+  U2063/O (NAND2X1TAS7)                            0.41     51.52 f
+  U2066/O (NAND2X1TAS7)                            0.51     52.03 r
+  U2067/O (CLKINVX1TAS7)                           0.33     52.35 f
+  U2065/O (NAND2X1TAS7)                            0.48     52.83 r
+  u_alu_u_divisor_r_reg_reg_1__1_/D (DFFRBQX1TAS7)
+                                                   0.00     52.83 r
+  data arrival time                                         52.83
 
   clock clk (rise edge)                           60.00     60.00
-  clock network delay (propagated)                 0.00     60.00
-  result_reg_1_/CK (DFFRBQX1TAS7)                  0.00     60.00 r
+  clock network delay (ideal)                      0.00     60.00
+  u_alu_u_divisor_r_reg_reg_1__1_/CK (DFFRBQX1TAS7)
+                                                   0.00     60.00 r
   clock uncertainty                               -0.20     59.80
-  library setup time                              -1.45     58.35
-  data required time                                        58.35
+  library setup time                              -1.26     58.54
+  data required time                                        58.54
   ------------------------------------------------------------------------
-  data required time                                        58.35
-  data arrival time                                        -105.85
+  data required time                                        58.54
+  data arrival time                                        -52.83
   ------------------------------------------------------------------------
-  slack (VIOLATED)                                         -47.50
-
-
-
-  Startpoint: u_alu_u_divisor_b_pipe_reg_2__9_ (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: result_reg_10_ (rising edge-triggered flip-flop clocked by clk)
-  Mode: func
-  Corner: typical
-  Scenario: func_typical
-  Path Group: clk
-  Path Type: max
-
-  Point                                            Incr      Path  
-  ------------------------------------------------------------------------
-  clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                50.71     50.71
-
-  u_alu_u_divisor_b_pipe_reg_2__9_/CK (DFFRBQX1TAS7)
-                                                   0.00     50.71 r
-  u_alu_u_divisor_b_pipe_reg_2__9_/Q (DFFRBQX1TAS7)
-                                                   3.77     54.48 r
-  U2262/O (CLKINVX1TAS7)                           0.97     55.44 f
-  U2263/O (NOR2X1TAS7)                             1.60     57.04 r
-  U2284/O (OAI12X1TAS7)                            0.78     57.83 f
-  U2288/O (AOI12X1TAS7)                            2.06     59.88 r
-  U2296/O (OAI12X1TAS7)                            0.64     60.52 f
-  U2297/O (AOI12X1TAS7)                            1.15     61.67 r
-  U611/O (XOR2X4TAS7)                              3.07     64.74 f
-  U2298/O (INVX4TAS7)                              1.05     65.78 r
-  U2353/O (NAND2X1TAS7)                            0.45     66.23 f
-  U2355/O (NAND2X1TAS7)                            0.74     66.98 r
-  U2356/O (NOR2X1TAS7)                             0.46     67.43 f
-  U2357/O (NOR2X1TAS7)                             1.34     68.78 r
-  U2376/O (NAND2X1TAS7)                            0.66     69.43 f
-  U2384/O (OAI12X2TAS7)                            2.17     71.60 r
-  U2492/O (AOI12X1TAS7)                            0.87     72.47 f
-  U2493/O (XOR2X2TAS7)                             2.64     75.12 r
-  U636/O (CLKINVX1TAS7)                            2.01     77.13 f
-  U2541/O (AOI12X1TAS7)                            1.94     79.06 r
-  U2542/O (NOR2X1TAS7)                             0.59     79.65 f
-  U2543/O (NOR2X1TAS7)                             1.34     80.99 r
-  U2562/O (NAND2X1TAS7)                            0.52     81.52 f
-  U640/O (OAI12X1TAS7)                             3.24     84.76 r
-  U2677/O (AOI12X1TAS7)                            1.03     85.80 f
-  U2678/O (XOR2X4TAS7)                             3.22     89.02 f
-  U2712/O (MUX2X1TAS7)                             1.87     90.89 r
-  U2713/O (NOR2X1TAS7)                             0.43     91.32 f
-  U2714/O (NOR2X1TAS7)                             1.34     92.67 r
-  U2729/O (NAND2X1TAS7)                            0.52     93.19 f
-  U638/O (OAI12X1TAS7)                             3.24     96.43 r
-  U2822/O (AOI12X1TAS7)                            1.03     97.47 f
-  U612/O (XOR2X1TAS7)                              1.82     99.29 f
-  U614/O (NOR2X1TAS7)                              4.52    103.81 r
-  U3014/O (NAND2X1TAS7)                            0.71    104.52 f
-  U3015/O (OAI112X1TAS7)                           1.04    105.56 r
-  result_reg_10_/D (DFFRBQX1TAS7)                  0.00    105.56 r
-  data arrival time                                        105.56
-
-  clock clk (rise edge)                           60.00     60.00
-  clock network delay (propagated)                 0.00     60.00
-  result_reg_10_/CK (DFFRBQX1TAS7)                 0.00     60.00 r
-  clock uncertainty                               -0.20     59.80
-  library setup time                              -1.49     58.31
-  data required time                                        58.31
-  ------------------------------------------------------------------------
-  data required time                                        58.31
-  data arrival time                                        -105.56
-  ------------------------------------------------------------------------
-  slack (VIOLATED)                                         -47.25
+  slack (MET)                                                5.71
 
 
 1

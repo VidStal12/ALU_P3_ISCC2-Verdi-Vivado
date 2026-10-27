@@ -2,7 +2,7 @@
 Report : qor
 Design : Top_ALU_secuencial
 Version: Y-2026.03-SP2
-Date   : Sat Oct 24 18:29:08 2026
+Date   : Mon Oct 26 20:38:56 2026
 ****************************************
 Warning: no valid parasitic for typical corner(LATE) (NEX-018)
 Warning: no valid parasitic for typical corner(EARLY) (NEX-018)
@@ -12,29 +12,29 @@ Warning: The extractor can not be initialized for block 'Top_ALU_secuencial'. (T
 Warning: The extractor can not be initialized for design 'Top_ALU_secuencial'. Zero interconnect delay is used in timing analysis. (TIM-102)
 Warning: Batch extraction is skipped for block "Top_ALU_secuencial"
 Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
-Information: Net estimation statistics: timing graph nets = 2833, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+Information: Net estimation statistics: timing graph nets = 4439, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
 
 
 Scenario           'func_typical'
 Timing Path Group  '**in2reg_default**'
 ----------------------------------------
-Levels of Logic:                      0
-Critical Path Length:              2.00
-Critical Path Slack:              56.65
+Levels of Logic:                      3
+Critical Path Length:              5.20
+Critical Path Slack:              55.85
 Critical Path Clk Period:         60.00
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
-Worst Hold Violation:            -62.27
-Total Hold Violation:         -10505.08
-No. of Hold Violations:             222
+Worst Hold Violation:             -0.82
+Total Hold Violation:            -10.06
+No. of Hold Violations:              79
 ----------------------------------------
 
 Scenario           'func_typical'
 Timing Path Group  '**reg2out_default**'
 ----------------------------------------
 Levels of Logic:                      0
-Critical Path Length:              1.96
-Critical Path Slack:              55.84
+Critical Path Length:              2.09
+Critical Path Slack:              55.71
 Critical Path Clk Period:         60.00
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
@@ -46,27 +46,27 @@ No. of Hold Violations:               0
 Scenario           'func_typical'
 Timing Path Group  'clk'
 ----------------------------------------
-Levels of Logic:                     39
-Critical Path Length:             57.08
-Critical Path Slack:             -49.26
+Levels of Logic:                     71
+Critical Path Length:             53.52
+Critical Path Slack:               5.05
 Critical Path Clk Period:         60.00
-Total Negative Slack:          -1540.26
-No. of Violating Paths:              53
-Worst Hold Violation:            -51.85
-Total Hold Violation:          -3045.48
-No. of Hold Violations:             164
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
 ----------------------------------------
 
 
 Cell Count
 ----------------------------------------
-Hierarchical Cell Count:              1
-Hierarchical Port Count:              6
-Leaf Cell Count:                   2785
-Buf/Inv Cell Count:                 553
-Buf Cell Count:                       3
-Inv Cell Count:                     550
-Combinational Cell Count:          2562
+Hierarchical Cell Count:             14
+Hierarchical Port Count:             84
+Leaf Cell Count:                   4391
+Buf/Inv Cell Count:                1761
+Buf Cell Count:                     144
+Inv Cell Count:                    1617
+Combinational Cell Count:          4155
    Single-bit Isolation Cell Count:                        0
    Multi-bit Isolation Cell Count:                         0
    Isolation Cell Banking Ratio:                           0.00%
@@ -76,8 +76,8 @@ Combinational Cell Count:          2562
    Single-bit ELS Cell Count:                              0
    Multi-bit ELS Cell Count:                               0
    ELS Cell Banking Ratio:                                 0.00%
-Sequential Cell Count:              223
-   Integrated Clock-Gating Cell Count:                     1
+Sequential Cell Count:              236
+   Integrated Clock-Gating Cell Count:                     14
    Sequential Macro Cell Count:                            0
    Single-bit Sequential Cell Count:                       222
    Multi-bit Sequential Cell Count:                        0
@@ -89,27 +89,27 @@ Macro Count:                          0
 
 Area
 ----------------------------------------
-Combinational Area:            30162.59
-Noncombinational Area:         11497.65
-Buf/Inv Area:                   3606.22
-Total Buffer Area:                29.03
-Total Inverter Area:            3577.19
+Combinational Area:            45822.87
+Noncombinational Area:         12650.80
+Buf/Inv Area:                  13686.22
+Total Buffer Area:              2082.12
+Total Inverter Area:           11604.10
 Macro/Black Box Area:              0.00
 Net Area:                             0
-Net XLength:                   27468.71
-Net YLength:                   24759.36
+Net XLength:                   47244.53
+Net YLength:                   52784.04
 ----------------------------------------
-Cell Area (netlist):                          41660.24
-Cell Area (netlist and physical only):        41660.24
-Net Length:                    52228.08
+Cell Area (netlist):                          58473.68
+Cell Area (netlist and physical only):        58473.68
+Net Length:                   100028.58
 
 
 Design Rules
 ----------------------------------------
-Total Number of Nets:              2835
-Nets with Violations:                 1
-Max Trans Violations:                 1
-Max Cap Violations:                   1
+Total Number of Nets:              4441
+Nets with Violations:               791
+Max Trans Violations:               791
+Max Cap Violations:                   0
 ----------------------------------------
 
 1

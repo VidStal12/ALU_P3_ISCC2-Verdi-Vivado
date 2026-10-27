@@ -5,7 +5,7 @@ Report : clock qor
         -type summary
 Design : Top_ALU_secuencial
 Version: Y-2026.03-SP2
-Date   : Sat Oct 24 18:29:06 2026
+Date   : Mon Oct 26 20:38:45 2026
 ****************************************
 
 Attributes
@@ -27,9 +27,9 @@ Skew Group                                                   Repeater  Repeater 
                                                                 Count      Area      Area
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Mode: func, Scenario: func_typical
-clk                                     M,D       222      2        0      0.00     40.32     50.71     50.71         1         1   1587.59
+clk                                     M,D       222      2        0      0.00    564.48      0.00      0.00         0         0   2255.91
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-All Clocks                                        222      2        0      0.00     40.32     50.71     50.71         1         1   1587.59
+All Clocks                                        222      2        0      0.00    564.48      0.00      0.00         0         0   2255.91
 
 
 Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956)

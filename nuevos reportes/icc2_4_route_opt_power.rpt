@@ -3,7 +3,7 @@ Report : power
         -significant_digits 2
 Design : Top_ALU_secuencial
 Version: Y-2026.03-SP2
-Date   : Sat Oct 24 18:29:14 2026
+Date   : Mon Oct 26 20:39:07 2026
 ****************************************
 Information: Activity for scenario func_typical was cached, no propagation required. (POW-005)
 Information: Activity for scenario func_typical was cached, no propagation required. (POW-005)
@@ -27,11 +27,11 @@ Supply nets:
 VDD (power) probability 1.00 (default)
 VSS (ground) probability 1.00 (default)
 
-  Cell Internal Power    = 6.98e+07 pW ( 75.2%)
-  Net Switching Power    = 2.30e+07 pW ( 24.8%)
-Total Dynamic Power      = 9.28e+07 pW (100.0%)
+  Cell Internal Power    = 8.36e+07 pW ( 72.1%)
+  Net Switching Power    = 3.23e+07 pW ( 27.9%)
+Total Dynamic Power      = 1.16e+08 pW (100.0%)
 
-Cell Leakage Power       = 1.32e+03 pW
+Cell Leakage Power       = 2.12e+03 pW
 
 
   Attributes
@@ -44,10 +44,10 @@ Power Group         Internal Power        Switching Power          Leakage Power
 io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
 memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
 black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
-clock_network             4.85e+07               7.82e+06               1.49e+00               5.63e+07    ( 60.6%)        i
-register                  7.99e+06               2.04e+06               2.58e+02               1.00e+07    ( 10.8%)         
+clock_network             5.27e+07               7.82e+06               2.08e+01               6.05e+07    ( 52.2%)        i
+register                  8.39e+06               2.27e+06               3.18e+02               1.07e+07    (  9.2%)         
 sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
-combinational             1.34e+07               1.31e+07               1.06e+03               2.65e+07    ( 28.6%)         
+combinational             2.25e+07               2.22e+07               1.78e+03               4.47e+07    ( 38.6%)         
 -----------------------------------------------------------------------------------------------------------------------------
-Total                     6.98e+07 pW            2.30e+07 pW            1.32e+03 pW            9.28e+07 pW
+Total                     8.36e+07 pW            3.23e+07 pW            2.12e+03 pW            1.16e+08 pW
 1

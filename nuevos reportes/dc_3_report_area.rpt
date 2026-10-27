@@ -3,29 +3,29 @@
 Report : area
 Design : Top_ALU_secuencial
 Version: X-2025.06-SP5-5
-Date   : Sat Oct 24 16:07:51 2026
+Date   : Mon Oct 26 20:38:08 2026
 ****************************************
 
 Library(s) Used:
 
     M31LLSC750GL150MS_25CTT1P8_ctyp_ccs (File: /home/vpezzarossi/ALU/M31/M31LLSC750GL150MS_00.01.000/ccs_db/M31LLSC750GL150MS_25CTT1P8_ctyp_ccs.db)
 
-Number of ports:                           61
-Number of nets:                          2837
-Number of cells:                         2786
-Number of combinational cells:           2530
-Number of sequential cells:               255
+Number of ports:                          113
+Number of nets:                          4495
+Number of cells:                         4405
+Number of combinational cells:           4123
+Number of sequential cells:               268
 Number of macros/black boxes:               0
-Number of buf/inv:                        553
-Number of references:                      37
+Number of buf/inv:                       1761
+Number of references:                      87
 
-Combinational area:              29801.318316
-Buf/Inv area:                     3606.220804
-Noncombinational area:           11858.918427
+Combinational area:              45429.350212
+Buf/Inv area:                    13686.220770
+Noncombinational area:           13044.326456
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 41660.236742
+Total cell area:                 58473.676668
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -35,11 +35,37 @@ Hierarchical area distribution
                                   -------------------  ------------------------------ 
 Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
                                   Total       Total    national    national    boxes   Design
---------------------------------  ----------  -------  ----------  ----------  ------  ------------------------------------
-Top_ALU_secuencial                41660.2367    100.0  29801.3183  11818.5984  0.0000  Top_ALU_secuencial
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------------------------------------
+Top_ALU_secuencial                58473.6767    100.0  45429.3502  12479.8465  0.0000  Top_ALU_secuencial
+u_alu/u_divisor/clk_gate_a_pipe_reg[0]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_2
+u_alu/u_divisor/clk_gate_a_pipe_reg[1]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_6
+u_alu/u_divisor/clk_gate_a_pipe_reg[2]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_11
+u_alu/u_divisor/clk_gate_b_pipe_reg[0]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_3
+u_alu/u_divisor/clk_gate_b_pipe_reg[1]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_7
+u_alu/u_divisor/clk_gate_b_pipe_reg[1]_0
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_8
+u_alu/u_divisor/clk_gate_b_pipe_reg[2]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_12
+u_alu/u_divisor/clk_gate_q_reg_reg[0]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_4
+u_alu/u_divisor/clk_gate_q_reg_reg[2]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_13
 u_alu/u_divisor/clk_gate_r_reg_reg[0]
-                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16
---------------------------------  ----------  -------  ----------  ----------  ------  ------------------------------------
-Total                                                  29801.3183  11858.9184  0.0000
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_0
+u_alu/u_divisor/clk_gate_r_reg_reg[0]_0
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_1
+u_alu/u_divisor/clk_gate_r_reg_reg[1]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_5
+u_alu/u_divisor/clk_gate_r_reg_reg[2]
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_9
+u_alu/u_divisor/clk_gate_r_reg_reg[2]_0
+                                     40.3200      0.1      0.0000     40.3200  0.0000  SNPS_CLOCK_GATE_HIGH_divisor_ancho16_10
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------------------------------------
+Total                                                  45429.3502  13044.3265  0.0000
 
 1

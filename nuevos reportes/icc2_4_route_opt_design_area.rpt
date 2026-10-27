@@ -2,7 +2,7 @@
 Report : design
 Design : Top_ALU_secuencial
 Version: Y-2026.03-SP2
-Date   : Sat Oct 24 18:29:14 2026
+Date   : Mon Oct 26 20:39:07 2026
 ****************************************
 
 Total number of std cells in library : 295
@@ -16,34 +16,34 @@ Total number of ICGs                 : 6
 
 Cell Instance Type  Count         Area
 --------------------------------------
-TOTAL LEAF CELLS     2785    41660.237
-unit                 2785    41660.237
-Standard cells       2785    41660.237
-unit                 2785    41660.237
+TOTAL LEAF CELLS     4391    58473.677
+unit                 4391    58473.677
+Standard cells       4391    58473.677
+unit                 4391    58473.677
 Hard macro cells        0        0.000
-unit                 2785    41660.237
+unit                 4391    58473.677
 Soft macro cells        0        0.000
-unit                 2785    41660.237
+unit                 4391    58473.677
 Always on cells         0        0.000
-unit                 2785    41660.237
+unit                 4391    58473.677
 Physical only           0        0.000
-unit                 2785    41660.237
+unit                 4391    58473.677
 Fixed cells             0        0.000
-unit                 2785    41660.237
-Moveable cells       2785    41660.237
-unit                 2785    41660.237
-Placed cells          223    11497.651
-unit                 2785    41660.237
-Sequential            223    11497.651
-unit                 2785    41660.237
-Buffer/inverter       553     3606.221
-unit                 2785    41660.237
-ICG cells               1       40.320
-unit                 2785    41660.237
+unit                 4391    58473.677
+Moveable cells       4391    58473.677
+unit                 4391    58473.677
+Placed cells         4391    58473.677
+unit                 4391    58473.677
+Sequential            236    12650.803
+unit                 4391    58473.677
+Buffer/inverter      1761    13686.221
+unit                 4391    58473.677
+ICG cells              14      564.480
+unit                 4391    58473.677
 
-Logic Hierarchies                    : 1
-Design Masters count                 : 37
-Total Flat nets count                : 2835
+Logic Hierarchies                    : 14
+Design Masters count                 : 74
+Total Flat nets count                : 4441
 Total FloatingNets count             : 0
 Total no of Ports                    : 59
 Number of Master Clocks in design    : 1
@@ -54,9 +54,9 @@ List of Modes                        : func
 List of Corners                      : typical
 List of Scenarios                    : func_typical
 
-Core Area                            : 63745.920
-Chip Area                            : 68895.520
-Total Site Row Area                  : 63745.920
+Core Area                            : 72640.512
+Chip Area                            : 74812.672
+Total Site Row Area                  : 72640.512
 Number of Blockages                  : 0
 Total area of Blockages              : 0.000
 Number of Power Domains              : 1
@@ -69,7 +69,7 @@ Number of Multibit LS/ISO Cells      : 0
 Number of Top Level RP Groups        : 0
 Number of Tech Layers                : 16 (11 of them have unknown routing dir.)
 
-Total wire length                    : 21808.48 micron
-Total number of wires                : 1322
-Total number of contacts             : 1275
+Total wire length                    : 96978.46 micron
+Total number of wires                : 23303
+Total number of contacts             : 22501
 1
